@@ -3,21 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NovaCraft Digital | Academic Assignment Documentation Report</title>
+  <title>BookNest Online Bookstore | Practical Work Report — Paper SEC301 (MIS)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <style>
     body {
       background-color: #0b0f19;
       color: #e2e8f0;
-      line-height: 1.7;
+      line-height: 1.75;
+      font-family: 'Plus Jakarta Sans', sans-serif;
     }
     .report-container {
       max-width: 1040px;
       margin: 0 auto;
-      padding: 3rem 1.5rem 6rem;
+      padding: 2.5rem 1.5rem 6rem;
     }
     .report-card {
       background: rgba(22, 30, 49, 0.7);
@@ -34,7 +35,7 @@
       border: 1px solid rgba(99, 102, 241, 0.3);
       padding: 0.25rem 0.75rem;
       border-radius: var(--radius-full);
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       font-weight: 700;
       margin-bottom: 1rem;
       text-transform: uppercase;
@@ -60,23 +61,39 @@
       border-top: 1px solid rgba(255, 255, 255, 0.06);
       font-style: italic;
     }
-    .meta-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1.5rem;
-      background: rgba(255,255,255,0.02);
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-md);
-      padding: 1.5rem;
-      margin: 1.5rem 0 2rem;
+    .cover-box {
+      border: 3px double rgba(99, 102, 241, 0.4);
+      border-radius: var(--radius-xl);
+      padding: 3.5rem 2rem;
+      text-align: center;
+      margin-bottom: 3rem;
+      background: linear-gradient(180deg, rgba(30, 27, 75, 0.3) 0%, rgba(15, 23, 42, 0.6) 100%);
     }
-    .meta-item strong {
-      display: block;
-      font-size: 0.75rem;
+    .toc-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+    }
+    .toc-table td, .toc-table th {
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .toc-table th {
+      text-align: left;
       color: var(--accent-secondary);
+      font-size: 0.8rem;
       text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 0.25rem;
+    }
+    .toc-table tr:hover td {
+      background: rgba(255, 255, 255, 0.02);
+    }
+    .signature-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      margin-top: 2.5rem;
+      padding-top: 2rem;
+      border-top: 1px dashed rgba(255,255,255,0.1);
     }
     .nav-bar-sticky {
       display: flex;
@@ -91,218 +108,521 @@
       z-index: 100;
     }
     @media print {
-      .nav-bar-sticky, .no-print { display: none; }
-      body { background: #fff; color: #000; }
-      .report-card { border: 1px solid #ccc; box-shadow: none; background: #fff; color: #000; }
+      .nav-bar-sticky, .no-print { display: none !important; }
+      body { background: #fff !important; color: #111 !important; }
+      .report-card {
+        border: 1px solid #ccc !important;
+        box-shadow: none !important;
+        background: #fff !important;
+        color: #111 !important;
+        page-break-inside: avoid;
+        margin-bottom: 2rem !important;
+      }
+      .cover-box {
+        border: 2px solid #000 !important;
+        background: #fff !important;
+        color: #000 !important;
+        page-break-after: always;
+      }
+      h1, h2, h3, h4 { color: #000 !important; }
+      a { color: #000 !important; text-decoration: underline; }
+      .screenshot-figure { border: 1px solid #999 !important; box-shadow: none !important; }
+      .screenshot-caption { background: #f1f5f9 !important; color: #333 !important; }
     }
   </style>
 </head>
 <body>
+  <!-- Sticky Print / Back Navigation -->
   <div class="nav-bar-sticky">
     <div style="font-weight: 800; font-size: 1.1rem; display: flex; align-items: center; gap: 0.5rem;">
-      <span style="color: #6366f1;">📄</span>
-      <span>NovaCraft Digital • Assignment Report</span>
+      <span style="color: #6366f1;">📚</span>
+      <span>BookNest Online Bookstore • Practical Work Report (SEC301)</span>
     </div>
     <div style="display: flex; gap: 0.75rem;">
       <a href="index.html" class="btn-secondary" style="padding: 0.45rem 1rem; font-size: 0.85rem;">
         ← Back to Live Store
       </a>
       <button onclick="window.print()" class="btn-primary" style="padding: 0.45rem 1rem; font-size: 0.85rem;">
-        🖨 Print / Export PDF
+        🖨 Print / Export PDF (Spiral Binding)
       </button>
     </div>
   </div>
 
   <div class="report-container">
-    <header style="margin-bottom: 3rem; text-align: center;">
-      <span class="report-badge">Academic Submission Document</span>
-      <h1 style="font-size: clamp(2rem, 3.5vw, 2.8rem); margin-bottom: 1rem; line-height: 1.2;">
-        Design and Build an E-Commerce Website
-      </h1>
-      <p style="font-size: 1.1rem; color: var(--text-secondary); max-width: 720px; margin: 0 auto;">
-        An Academic Investigation into Digital Markets, Intangible Digital Goods, and E-Commerce Business Models via the NovaCraft Digital Platform.
-      </p>
+    <!-- =======================================================================
+         1. Cover Page (Mandated by Classroom Instructions)
+         ======================================================================= -->
+    <div class="cover-box" id="coverPage">
+      <div style="font-size: 0.85rem; font-weight: 700; letter-spacing: 0.15em; color: #818cf8; text-transform: uppercase; margin-bottom: 0.5rem;">
+        DEPARTMENT OF BUSINESS ADMINISTRATION
+      </div>
+      <div style="font-size: 1.1rem; font-weight: 600; color: #cbd5e1; margin-bottom: 2rem;">
+        BACHELOR OF BUSINESS ADMINISTRATION (BBA) — 2ND YEAR, SEMESTER III
+      </div>
 
-      <div class="meta-grid" style="text-align: left;">
-        <div class="meta-item">
-          <strong>Student / Submitter</strong>
-          <span>Sruti Sharma</span>
+      <div style="width: 80px; height: 2px; background: var(--accent-secondary); margin: 0 auto 2.5rem;"></div>
+
+      <h1 style="font-size: clamp(2rem, 3.5vw, 2.7rem); line-height: 1.25; margin-bottom: 1rem; color: #fff;">
+        PRACTICAL WORK REPORT ON<br>
+        <span class="gradient-text">DESIGN AND BUILD AN E-COMMERCE WEBSITE</span>
+      </h1>
+      <h2 style="font-size: 1.4rem; font-weight: 600; color: #94a3b8; margin-bottom: 2rem;">
+        "BookNest — Online Bookstore (B2C Model with Digital Goods)"
+      </h2>
+
+      <div style="display: inline-block; background: rgba(99, 102, 241, 0.15); border: 1px solid rgba(99, 102, 241, 0.3); padding: 0.6rem 1.25rem; border-radius: var(--radius-full); font-size: 0.95rem; margin-bottom: 3rem;">
+        <strong>Paper:</strong> Management Information System &nbsp;|&nbsp; <strong>Paper Code:</strong> SEC301 &nbsp;|&nbsp; <strong>Track:</strong> Section B
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; max-width: 780px; margin: 0 auto; text-align: left; background: rgba(255,255,255,0.02); padding: 2rem; border-radius: var(--radius-lg); border: 1px solid var(--border-subtle);">
+        <div>
+          <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--accent-secondary); font-weight: 700; margin-bottom: 0.35rem;">
+            Submitted By
+          </div>
+          <div style="font-size: 1.1rem; font-weight: 700; color: #fff;">Sruti Das</div>
+          <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem;">BBA 2nd Year – 3rd Semester (PCA2_MIS)</div>
+          <div style="font-size: 0.85rem; color: var(--text-muted);">Submission Category: CC 130</div>
+          <div style="font-size: 0.85rem; color: var(--text-muted);">Submission Link: Form cc130</div>
         </div>
-        <div class="meta-item">
-          <strong>Course Focus</strong>
-          <span>E-Commerce & Digital Markets</span>
-        </div>
-        <div class="meta-item">
-          <strong>Platform Name</strong>
-          <span>NovaCraft Digital Technologies</span>
-        </div>
-        <div class="meta-item">
-          <strong>Submission Date</strong>
-          <span>October 2026</span>
+
+        <div>
+          <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--accent-secondary); font-weight: 700; margin-bottom: 0.35rem;">
+            Submitted To
+          </div>
+          <div style="font-size: 1.1rem; font-weight: 700; color: #fff;">Dr. Sudipta Halder</div>
+          <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem;">Faculty Evaluator & Course In-Charge</div>
+          <div style="font-size: 0.85rem; color: var(--text-muted);">Management Information Systems (SEC301)</div>
+          <div style="font-size: 0.85rem; color: var(--text-muted);">Hard Copy Spiral Binding: 6th & 7th November 2026</div>
         </div>
       </div>
-    </header>
 
-    <!-- Section 1 -->
-    <section class="report-card" id="guideline1">
-      <span class="report-badge">Guideline 1</span>
-      <h2 style="font-size: 1.7rem; margin-bottom: 1.25rem;">1. Introduction to the Company</h2>
-      <p>
-        <strong>NovaCraft Digital Technologies Pvt. Ltd.</strong> is an electronic commerce enterprise established in 2024 to revolutionize how technical and creative assets are distributed. Headquartered in Bengaluru, Karnataka, India, with edge server infrastructure deployed globally, NovaCraft provides a frictionless digital marketplace for engineers, designers, and students.
+      <div style="margin-top: 2.5rem; font-size: 0.85rem; color: var(--text-muted);">
+        Date of Digital Submission: <strong>31st October 2026</strong> &nbsp;•&nbsp; Page Limit: <strong>Maximum 30 Pages</strong>
+      </div>
+    </div>
+
+    <!-- =======================================================================
+         2. Declaration
+         ======================================================================= -->
+    <section class="report-card" id="declaration">
+      <span class="report-badge">Section 2</span>
+      <h2 style="font-size: 1.6rem; margin-bottom: 1.25rem; color: #fff;">Declaration</h2>
+      <p style="font-size: 1rem; line-height: 1.8; color: #cbd5e1;">
+        I, <strong>Sruti Das</strong>, student of <strong>BBA 2nd Year, 3rd Semester</strong>, hereby declare that the practical work report entitled <strong>"BookNest — Online Bookstore (B2C with Digital Goods)"</strong> submitted in partial fulfillment of the academic requirements for the paper <strong>Management Information System (Paper Code: SEC301)</strong>, is an authentic record of my own work conducted under the academic supervision of <strong>Dr. Sudipta Halder</strong>.
       </p>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
-        <div style="background: rgba(255,255,255,0.03); padding: 1.25rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
-          <h4 style="color: var(--accent-secondary); margin-bottom: 0.5rem;">Corporate Objectives</h4>
-          <ul style="font-size: 0.88rem; color: var(--text-secondary); display: flex; flex-direction: column; gap: 0.4rem; list-style-position: inside;">
-            <li>Eliminate middleman fee gouging by offering an 85% creator royalty share.</li>
-            <li>Deliver instant sub-second (&lt; 0.8s) cloud distribution to 140+ countries.</li>
-            <li>Automate software licensing and cryptographic key verification.</li>
-          </ul>
+      <p style="font-size: 1rem; line-height: 1.8; color: #cbd5e1; margin-top: 1rem;">
+        I further certify that this website application and accompanying documentation have been constructed in strict conformity with the guidelines issued for <strong>Section B (BookNest — Online Bookstore)</strong>, including book search, sample chapter previews, instant electronic downloads, and customer ratings. This report has not been submitted to any other university or board for any qualification.
+      </p>
+
+      <div class="signature-grid">
+        <div>
+          <div style="font-size: 0.85rem; color: var(--text-muted);">Date: <strong>31st October 2026</strong></div>
+          <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem;">Place: <strong>Kolkata, West Bengal</strong></div>
         </div>
-        <div style="background: rgba(255,255,255,0.03); padding: 1.25rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
-          <h4 style="color: var(--accent-secondary); margin-bottom: 0.5rem;">Target Demographics</h4>
-          <ul style="font-size: 0.88rem; color: var(--text-secondary); display: flex; flex-direction: column; gap: 0.4rem; list-style-position: inside;">
-            <li>Software Engineers and Tech Leads needing SaaS boilerplates.</li>
-            <li>UI/UX Designers seeking modular Figma design token libraries.</li>
-            <li>Indie Hackers, Solo Founders, and University Engineering Students.</li>
-          </ul>
+        <div style="text-align: right;">
+          <div style="font-weight: 700; color: #fff; font-size: 1.05rem;">Sruti Das</div>
+          <div style="font-size: 0.85rem; color: var(--accent-secondary);">BBA 3rd Semester (SEC301)</div>
+          <div style="font-size: 0.8rem; color: var(--text-muted);">Student Signature</div>
         </div>
       </div>
     </section>
 
-    <!-- Section 2 -->
-    <section class="report-card" id="guideline2">
-      <span class="report-badge">Guideline 2</span>
-      <h2 style="font-size: 1.7rem; margin-bottom: 1.25rem;">2. Website Design and Interactive Features</h2>
-      <p>
-        The NovaCraft Digital website has been constructed with cutting-edge web design standards:
+    <!-- =======================================================================
+         3. Acknowledgement
+         ======================================================================= -->
+    <section class="report-card" id="acknowledgement">
+      <span class="report-badge">Section 3</span>
+      <h2 style="font-size: 1.6rem; margin-bottom: 1.25rem; color: #fff;">Acknowledgement</h2>
+      <p style="font-size: 1rem; line-height: 1.8; color: #cbd5e1;">
+        I express my sincere and heartfelt gratitude to our honorable faculty member, <strong>Dr. Sudipta Halder</strong>, for assigning this practical work project and providing continuous academic counsel, clarity of thought, and constructive feedback throughout the course of <strong>Management Information System (SEC301)</strong>. His structured briefing for <strong>Section B: BookNest Online Bookstore</strong> enabled me to understand how digital markets, intangible goods, and e-commerce models function in practical enterprise ecosystems.
       </p>
-      <ul style="margin: 1rem 0 1.5rem 1.5rem; color: var(--text-secondary); display: flex; flex-direction: column; gap: 0.5rem;">
-        <li><strong>Homepage & Brand Navigation:</strong> Clean vector logo, responsive navigation links with scroll spy, live currency switcher (USD, EUR, INR, GBP), and live search input with keyboard shortcut (<code>/</code>).</li>
-        <li><strong>Product Catalog:</strong> Dynamic category filtering across software, UI kits, e-books, and masterclasses with live sorting options.</li>
-        <li><strong>Interactive Quick-View Modal:</strong> Full asset specifications, download size, license tier, customer reviews, and a working review submission form.</li>
-        <li><strong>Shopping Cart Drawer:</strong> Off-canvas slide-out interface with line-item quantity controls, coupon engine (<code>DIGITAL20</code>, <code>SRUTI50</code>), and real-time total recalculation.</li>
-        <li><strong>Multi-Step Checkout:</strong> Delivery information capture, multi-gateway selector (Credit Card, PayPal, UPI QR, Crypto) with interactive 3D virtual card preview, animated mock payment processing, and post-purchase instant download manager.</li>
+      <p style="font-size: 1rem; line-height: 1.8; color: #cbd5e1; margin-top: 1rem;">
+        I am also grateful to the Department of Business Administration for providing the academic infrastructure, computing facilities, and digital library resources that facilitated the implementation and documentation of this practical assignment.
+      </p>
+      <div style="text-align: right; margin-top: 2rem;">
+        <strong>Sruti Das</strong><br>
+        <span style="font-size: 0.85rem; color: var(--text-muted);">BBA 2nd Year, 3rd Semester (PCA2_MIS)</span>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         4. Table of Contents
+         ======================================================================= -->
+    <section class="report-card" id="tableOfContents">
+      <span class="report-badge">Section 4</span>
+      <h2 style="font-size: 1.6rem; margin-bottom: 1.25rem; color: #fff;">Table of Contents</h2>
+      <table class="toc-table">
+        <thead>
+          <tr>
+            <th>Section #</th>
+            <th>Section Title & Topic</th>
+            <th style="text-align: right;">Page No. / Anchor</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>1.</strong></td><td><a href="#coverPage">Cover Page (Institutional Title & Submissions)</a></td><td style="text-align: right;">Page 1</td></tr>
+          <tr><td><strong>2.</strong></td><td><a href="#declaration">Declaration of Originality</a></td><td style="text-align: right;">Page 2</td></tr>
+          <tr><td><strong>3.</strong></td><td><a href="#acknowledgement">Acknowledgement</a></td><td style="text-align: right;">Page 3</td></tr>
+          <tr><td><strong>4.</strong></td><td><a href="#tableOfContents">Table of Contents</a></td><td style="text-align: right;">Page 4</td></tr>
+          <tr><td><strong>5.</strong></td><td><a href="#introObjectives">Introduction and Objectives</a></td><td style="text-align: right;">Page 5</td></tr>
+          <tr><td><strong>6.</strong></td><td><a href="#companyProfile">Company Profile and Business Model (B2C with Digital Goods)</a></td><td style="text-align: right;">Page 7</td></tr>
+          <tr><td><strong>7.</strong></td><td><a href="#websiteDesign">Website Design and Features (Search, Previews, Cart, Checkout)</a></td><td style="text-align: right;">Page 11</td></tr>
+          <tr><td><strong>8.</strong></td><td><a href="#digitalMarkets">Digital Markets and Digital Goods (Zero Marginal Cost & Non-Rivalry)</a></td><td style="text-align: right;">Page 16</td></tr>
+          <tr><td><strong>9.</strong></td><td><a href="#techDevelopment">Technologies Used and Development Process</a></td><td style="text-align: right;">Page 20</td></tr>
+          <tr><td><strong>10.</strong></td><td><a href="#screenshots">Screenshots of Website Pages (Figures 10.1 – 10.7)</a></td><td style="text-align: right;">Page 23</td></tr>
+          <tr><td><strong>11.</strong></td><td><a href="#benefitsSecurity">Benefits, Limitations, And Security Issues</a></td><td style="text-align: right;">Page 27</td></tr>
+          <tr><td><strong>12.</strong></td><td><a href="#conclusion">Conclusion</a></td><td style="text-align: right;">Page 29</td></tr>
+          <tr><td><strong>13.</strong></td><td><a href="#references">References & Academic Bibliography</a></td><td style="text-align: right;">Page 30</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- =======================================================================
+         5. Introduction and Objectives
+         ======================================================================= -->
+    <section class="report-card" id="introObjectives">
+      <span class="report-badge">Section 5</span>
+      <h2 style="font-size: 1.6rem; margin-bottom: 1.25rem; color: #fff;">5. Introduction and Objectives</h2>
+      
+      <h3 style="font-size: 1.2rem; color: var(--accent-secondary); margin: 1.5rem 0 0.5rem;">5.1 Theoretical Background in Management Information Systems</h3>
+      <p>
+        In contemporary business environments, Management Information Systems (MIS) are no longer auxiliary operational tools; they represent the foundational architecture that defines modern competitive strategy (Laudon & Laudon, 2022). A **digital firm** is an organization where nearly all significant commercial relationships with customers, suppliers, and employees are digitally mediated.
+      </p>
+      <p style="margin-top: 1rem;">
+        The traditional academic book market suffers from physical friction: costly warehousing, geographical supply chain delays, and severe **information asymmetry** where students cannot inspect textbooks or verify syllabus alignment prior to purchase. The conceptualization and implementation of **BookNest — Online Bookstore** demonstrates how an electronic marketplace resolves these frictions by blending physical book logistics with **instantaneous digital fulfillment of e-books and high-yield semester notes**.
+      </p>
+
+      <h3 style="font-size: 1.2rem; color: var(--accent-secondary); margin: 1.5rem 0 0.5rem;">5.2 Practical Work Objectives</h3>
+      <ul style="padding-left: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem; color: var(--text-secondary);">
+        <li><strong>Fulfill Section B Mandate:</strong> Design and deploy **BookNest — Online Bookstore** incorporating academic books, novels, e-books, and notes.</li>
+        <li><strong>Implement Core Features:</strong> Develop book search, interactive chapter previews, instant digital downloads, and verified customer ratings.</li>
+        <li><strong>Analyze Intangible Digital Goods Economics:</strong> Explore zero marginal reproduction cost ($MC \approx 0$), non-rivalrous consumption, and dynamic bundling.</li>
+        <li><strong>Substantiate B2C Architecture:</strong> Justify why a direct Business-to-Consumer model provides the highest academic quality control and customer trust.</li>
+        <li><strong>Demonstrate Secure Fulfillment:</strong> Execute client-side digital license generation and simulated payment processing via UPI QR, 3D card sync, and NetBanking.</li>
+      </ul>
+    </section>
+
+    <!-- =======================================================================
+         6. Company Profile and Business Model
+         ======================================================================= -->
+    <section class="report-card" id="companyProfile">
+      <span class="report-badge">Section 6</span>
+      <h2 style="font-size: 1.6rem; margin-bottom: 1.25rem; color: #fff;">6. Company Profile and Business Model</h2>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-bottom: 1.5rem;">
+        <div style="background: rgba(255,255,255,0.02); padding: 1.25rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+          <h4 style="color: var(--accent-secondary); font-size: 0.85rem; text-transform: uppercase;">Company Identity</h4>
+          <p style="font-size: 1.05rem; font-weight: 700; color: #fff; margin-top: 0.25rem;">BookNest Digital & Academic Publications Pvt. Ltd.</p>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem;">Trade Brand: <strong>BookNest — Online Bookstore</strong></p>
+        </div>
+        <div style="background: rgba(255,255,255,0.02); padding: 1.25rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+          <h4 style="color: var(--accent-secondary); font-size: 0.85rem; text-transform: uppercase;">Headquarters</h4>
+          <p style="font-size: 1.05rem; font-weight: 700; color: #fff; margin-top: 0.25rem;">College Street Academic Corridor</p>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem;">Kolkata, West Bengal 700073, India</p>
+        </div>
+      </div>
+
+      <h3 style="font-size: 1.2rem; color: var(--accent-secondary); margin: 1.5rem 0 0.5rem;">6.1 Products & Services Taxonomy</h3>
+      <div class="table-responsive" style="margin: 1rem 0 1.5rem;">
+        <table class="custom-table">
+          <thead>
+            <tr>
+              <th>Division</th>
+              <th>Catalog Titles</th>
+              <th>Format</th>
+              <th>License Tier</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Academic Textbooks</strong></td>
+              <td>*Management Information Systems (17th Ed)* (Laudon & Laudon); *Principles of Marketing (18th Ed)* (Kotler); *Financial Accounting*</td>
+              <td>Paperback + Hybrid E-Book</td>
+              <td>Prescribed University Text; Student Multi-Device License</td>
+            </tr>
+            <tr>
+              <td><strong>Novels & Bestsellers</strong></td>
+              <td>*Atomic Habits* (James Clear); *The Psychology of Money* (Morgan Housel); *1984* (George Orwell)</td>
+              <td>Hardcover / EPUB</td>
+              <td>Personal Reader Edition; International Bestsellers</td>
+            </tr>
+            <tr>
+              <td><strong>Digital E-Books</strong></td>
+              <td>*Zero to One* (Peter Thiel); *Designing Data-Intensive Applications* (Martin Kleppmann)</td>
+              <td>Instant PDF + EPUB</td>
+              <td>Searchable Vector Text; Cloud Fulfillment (< 0.8s)</td>
+            </tr>
+            <tr>
+              <td><strong>Semester Study Notes</strong></td>
+              <td>*BBA 3rd Sem MIS Comprehensive Revision Notes & Solved Papers (SEC301)*; *Commercial Law Guide*</td>
+              <td>Instant PDF Download</td>
+              <td>100% Exam Aligned; Formula sheets & 5-year model answers</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style="font-size: 1.2rem; color: var(--accent-secondary); margin: 1.5rem 0 0.5rem;">6.2 Target Demographics</h3>
+      <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+        BookNest targets four primary customer segments: **BBA/MBA Management Students (55%)**, **Competitive Exam Aspirants (20%)**, **Lifelong Fiction Readers (15%)**, and **Academic Educators (10%)**.
+      </p>
+
+      <h3 style="font-size: 1.2rem; color: var(--accent-secondary); margin: 1.5rem 0 0.5rem;">6.3 E-Commerce Business Model: B2C (Business-to-Consumer)</h3>
+      <p>
+        BookNest operates a direct **B2C (Business-to-Consumer)** retail and publishing model. While C2C marketplaces suffer from unverified sellers and counterfeit notes, BookNest establishes a verified, quality-curated distribution pipeline directly with publishers and academic faculty.
+      </p>
+      <ul style="padding-left: 1.5rem; margin-top: 0.75rem; color: var(--text-secondary); display: flex; flex-direction: column; gap: 0.4rem;">
+        <li><strong>Physical Book Margin:</strong> 15% to 25% gross retail margin on paperbacks.</li>
+        <li><strong>Digital Intangible Margin:</strong> 85% to 95% gross margin on e-books and revision notes due to zero marginal reproduction costs.</li>
+        <li><strong>Institutional Synergy:</strong> Seamless integration between university syllabi and instant student study packs.</li>
+      </ul>
+    </section>
+
+    <!-- =======================================================================
+         7. Website Design and Features
+         ======================================================================= -->
+    <section class="report-card" id="websiteDesign">
+      <span class="report-badge">Section 7</span>
+      <h2 style="font-size: 1.6rem; margin-bottom: 1.25rem; color: #fff;">7. Website Design and Features</h2>
+
+      <p>
+        The BookNest website is engineered with modern dark glassmorphism (`backdrop-filter: blur(16px)`), modern typography (Plus Jakarta Sans and JetBrains Mono), responsive CSS Grid, and micro-animations.
+      </p>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
+        <div style="background: rgba(255,255,255,0.02); padding: 1.25rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+          <h4 style="color: var(--accent-secondary); margin-bottom: 0.5rem;">1. Homepage & Book Search</h4>
+          <p style="font-size: 0.88rem; color: var(--text-secondary);">
+            Vector book brand icon, responsive navigation, announcement bar with promo codes (`BOOK20`, `SRUTI50`), and instant live search with keyboard shortcut (`/`).
+          </p>
+        </div>
+
+        <div style="background: rgba(255,255,255,0.02); padding: 1.25rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+          <h4 style="color: var(--accent-secondary); margin-bottom: 0.5rem;">2. SPECIAL FEATURE: Book Previews</h4>
+          <p style="font-size: 0.88rem; color: var(--text-secondary);">
+            Clicking **"📖 Read Sample"** opens the Book Preview modal, rendering sample chapter excerpts, interactive Table of Contents, and direct checkout triggers.
+          </p>
+        </div>
+
+        <div style="background: rgba(255,255,255,0.02); padding: 1.25rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+          <h4 style="color: var(--accent-secondary); margin-bottom: 0.5rem;">3. Off-Canvas Cart & Promo Math</h4>
+          <p style="font-size: 0.88rem; color: var(--text-secondary);">
+            Slide-out drawer with line-item quantity controls, coupon evaluation (`BOOK20` for 20% off; `SRUTI50` for 50% discount), and free instant electronic delivery.
+          </p>
+        </div>
+
+        <div style="background: rgba(255,255,255,0.02); padding: 1.25rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+          <h4 style="color: var(--accent-secondary); margin-bottom: 0.5rem;">4. Multi-Step Checkout & 3D Card</h4>
+          <p style="font-size: 0.88rem; color: var(--text-secondary);">
+            Step 1 address entry, Step 2 payment selection featuring a live-updating **3D virtual card preview**, UPI QR, Step 3 animated authorization, and Step 4 digital downloads.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         8. Digital Markets and Digital Goods
+         ======================================================================= -->
+    <section class="report-card" id="digitalMarkets">
+      <span class="report-badge">Section 8</span>
+      <h2 style="font-size: 1.6rem; margin-bottom: 1.25rem; color: #fff;">8. Digital Markets and Digital Goods</h2>
+
+      <h3 style="font-size: 1.2rem; color: var(--accent-secondary); margin: 1.5rem 0 0.5rem;">8.1 Economic Analysis: Zero Marginal Reproduction Cost ($MC = 0$)</h3>
+      <p>
+        In physical retail, every incremental textbook printed incurs paper, binding, storage, and courier freight costs ($MC > 0$). In contrast, once BookNest completes the initial compilation and layout of an academic e-book or BBA 3rd Sem MIS revision note packet, the cost of generating the $10,000^{\text{th}}$ copy is essentially **zero** ($MC \approx 0$).
+      </p>
+
+      <div class="table-responsive" style="margin: 1.5rem 0;">
+        <table class="custom-table">
+          <thead>
+            <tr>
+              <th>Economic Metric</th>
+              <th>Physical Books (College Street)</th>
+              <th>BookNest Digital Goods (E-Books & Notes)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Marginal Cost ($MC$)</strong></td>
+              <td>High: Variable printing and freight costs per book</td>
+              <td><span class="pill-highlight">Zero ($MC \approx 0$)</span></td>
+            </tr>
+            <tr>
+              <td><strong>Consumption Rivalry</strong></td>
+              <td>Rivalrous: Only one customer can hold a single copy</td>
+              <td><span class="pill-highlight">Non-Rivalrous: Infinite concurrent downloads</span></td>
+            </tr>
+            <tr>
+              <td><strong>Delivery Latency</strong></td>
+              <td>3 to 7 working days courier transit</td>
+              <td><span class="pill-highlight">Instant Sub-Second (< 0.8s) download</span></td>
+            </tr>
+            <tr>
+              <td><strong>Warehousing Overhead</strong></td>
+              <td>Physical rent, pest prevention, fire insurance</td>
+              <td><span class="pill-highlight">Zero physical footprint; cloud encrypted storage</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style="font-size: 1.2rem; color: var(--accent-secondary); margin: 1.5rem 0 0.5rem;">8.2 Pricing Strategies & Student Bundling</h3>
+      <p>
+        Because marginal costs are negligible, BookNest implements **promotional bundling** (pairing physical textbooks with digital revision notes) and **price discrimination** via student coupon codes (`BOOK20`, `STUDENT10`, `SRUTI50`), maximizing student consumer surplus and overall platform revenue.
+      </p>
+    </section>
+
+    <!-- =======================================================================
+         9. Technologies Used and Development Process
+         ======================================================================= -->
+    <section class="report-card" id="techDevelopment">
+      <span class="report-badge">Section 9</span>
+      <h2 style="font-size: 1.6rem; margin-bottom: 1.25rem; color: #fff;">9. Technologies Used and Development Process</h2>
+
+      <ul style="padding-left: 1.5rem; display: flex; flex-direction: column; gap: 0.65rem; color: var(--text-secondary); margin-bottom: 1.5rem;">
+        <li><strong>Semantic HTML5:</strong> Structured markup using accessible containers (`<header>`, `<nav>`, `<main>`, `<section>`, `<aside>`) and schema metadata.</li>
+        <li><strong>Vanilla CSS3 Design System:</strong> CSS custom properties, glassmorphism (`backdrop-filter`), 3D card tilt transforms, and fluid responsive grid layouts.</li>
+        <li><strong>Vanilla ES6+ JavaScript:</strong> Reactive client-side state machine handling catalog filtering, cart math, coupon deductions, book sample reader modals, and HTML5 `Blob` binary file synthesis.</li>
+        <li><strong>Node.js Static Server (`server.js`):</strong> Lightweight zero-dependency HTTP server with MIME type streaming on port 3000.</li>
       </ul>
 
-      <div class="screenshot-figure">
-        <img src="screenshots/01_homepage_hero.png" alt="Homepage Hero Banner">
-        <div class="screenshot-caption">Figure 2.1: Homepage featuring geometric branding, navigation menu, announcement promo banner, live metrics, and flagship software card.</div>
-      </div>
-
-      <div class="screenshot-figure">
-        <img src="screenshots/02_product_catalog.png" alt="Product Catalog">
-        <div class="screenshot-caption">Figure 2.2: Product catalog grid with category filter chips, format badges, star ratings, and Add-to-Cart triggers.</div>
-      </div>
-
-      <div class="screenshot-figure">
-        <img src="screenshots/03_product_detail_modal.png" alt="Product Quick View Modal">
-        <div class="screenshot-caption">Figure 2.3: Product quick-view modal with high-res preview, delivery latency badge, file format, and feature checklist.</div>
-      </div>
-
-      <div class="screenshot-figure">
-        <img src="screenshots/06_shopping_cart_discount.png" alt="Shopping Cart Drawer">
-        <div class="screenshot-caption">Figure 2.4: Slide-out shopping cart drawer with applied promo code DIGITAL20 (20% discount) and live total recalculation.</div>
-      </div>
-
-      <div class="screenshot-figure">
-        <img src="screenshots/07_checkout_virtual_card.png" alt="Multi-Step Checkout">
-        <div class="screenshot-caption">Figure 2.5: Interactive 3D virtual credit card preview dynamically updating as the user types payment details.</div>
-      </div>
-
-      <div class="screenshot-figure">
-        <img src="screenshots/08_order_confirmation_downloads.png" alt="Order Confirmation">
-        <div class="screenshot-caption">Figure 2.6: Order confirmation screen displaying unique Order ID, cryptographic license keys, copy-to-clipboard, and download buttons.</div>
+      <h3 style="font-size: 1.15rem; color: #fff; margin-bottom: 0.75rem;">Six-Phase Development Lifecycle:</h3>
+      <div style="background: rgba(16, 22, 35, 0.8); padding: 1.25rem; border-radius: var(--radius-md); font-family: 'JetBrains Mono', monospace; font-size: 0.825rem; color: #94a3b8; line-height: 1.6;">
+        Phase 1: Assignment Guidelines Deconstruction (Section B & SEC301 Syllabus)<br>
+        Phase 2: UX Wireframing & Glassmorphism Design System<br>
+        Phase 3: Catalog Architecture & Book Preview Reader Implementation<br>
+        Phase 4: Cart State Machine & Dynamic Promo Code Engine<br>
+        Phase 5: Multi-Rail Checkout & 3D Virtual Card Integration<br>
+        Phase 6: HTML5 Blob Digital Delivery & Academic Report Documentation
       </div>
     </section>
 
-    <!-- Section 3 -->
-    <section class="report-card" id="guideline3">
-      <span class="report-badge">Guideline 3</span>
-      <h2 style="font-size: 1.7rem; margin-bottom: 1.25rem;">3. Digital Markets and Digital Goods</h2>
-      <p>
-        Digital markets fundamentally transform traditional economic transaction models:
-      </p>
-      <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.5rem; margin: 1.5rem 0;">
-        <h4 style="color: var(--accent-secondary); margin-bottom: 0.5rem;">Economic Differences: Physical vs. Digital Goods</h4>
-        <p style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 1rem;">
-          In physical commerce, marginal cost of production ($MC$) is consistently positive due to raw materials, fabrication, and packaging. In contrast, digital goods possess a <strong>marginal reproduction cost of zero ($MC = $0)</strong>. Once the master copy of an e-book or software repository is created, streaming or downloading the $10,000^{\text{th}}$ copy incurs no additional manufacturing expense.
+    <!-- =======================================================================
+         10. Screenshots of Website Pages
+         ======================================================================= -->
+    <section class="report-card" id="screenshots">
+      <span class="report-badge">Section 10</span>
+      <h2 style="font-size: 1.6rem; margin-bottom: 1.25rem; color: #fff;">10. Screenshots of Website Pages</h2>
+
+      <div class="screenshot-figure">
+        <img src="screenshots/01_homepage_hero.png" alt="BookNest Homepage Hero">
+        <div class="screenshot-caption">Figure 10.1: Homepage featuring glowing atmospheric backdrop, navigation bar, instant search input, currency selector, trust statistics, and featured prescribed MIS textbook showcase card.</div>
+      </div>
+
+      <div class="screenshot-figure">
+        <img src="screenshots/02_product_catalog.png" alt="Book Catalog Grid">
+        <div class="screenshot-caption">Figure 10.2: Book catalog grid showcasing category filter chips, sorting dropdown, format badges, and action buttons (`👁 Quick View`, `📖 Read Sample`, `+ Add to Cart`).</div>
+      </div>
+
+      <div class="screenshot-figure">
+        <img src="screenshots/03_product_detail_modal.png" alt="Book Preview Modal">
+        <div class="screenshot-caption">Figure 10.3: Interactive Book Preview reader displaying chapter excerpt, Table of Contents sidebar, reading time estimate, and direct purchase trigger.</div>
+      </div>
+
+      <div class="screenshot-figure">
+        <img src="screenshots/04_customer_reviews.png" alt="Verified Student Reviews">
+        <div class="screenshot-caption">Figure 10.4: Product detail modal showing verified student reviews for Paper SEC301 and the interactive review submission form.</div>
+      </div>
+
+      <div class="screenshot-figure">
+        <img src="screenshots/06_shopping_cart_discount.png" alt="Shopping Cart Discount">
+        <div class="screenshot-caption">Figure 10.5: Slide-out off-canvas shopping cart showing itemized books, coupon evaluation (`BOOK20` deducting 20%), free electronic delivery, and updated total.</div>
+      </div>
+
+      <div class="screenshot-figure">
+        <img src="screenshots/07_checkout_virtual_card.png" alt="3D Virtual Card Checkout">
+        <div class="screenshot-caption">Figure 10.6: Step 2 of the checkout modal showcasing the interactive 3D virtual credit card preview that reflects student input in real time.</div>
+      </div>
+
+      <div class="screenshot-figure">
+        <img src="screenshots/08_order_confirmation_downloads.png" alt="Order Confirmation and Downloads">
+        <div class="screenshot-caption">Figure 10.7: Order confirmation screen displaying unique Order ID, delivery email verification, generated cryptographic license keys, and instant asset download triggers.</div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         11. Benefits, Limitations, And Security Issues
+         ======================================================================= -->
+    <section class="report-card" id="benefitsSecurity">
+      <span class="report-badge">Section 11</span>
+      <h2 style="font-size: 1.6rem; margin-bottom: 1.25rem; color: #fff;">11. Benefits, Limitations, And Security Issues</h2>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+        <div style="background: rgba(255,255,255,0.02); padding: 1.5rem; border-radius: var(--radius-lg); border: 1px solid var(--border-subtle);">
+          <h3 style="font-size: 1.15rem; color: #34d399; margin-bottom: 0.75rem;">11.1 Strategic Benefits</h3>
+          <ul style="font-size: 0.88rem; color: var(--text-secondary); display: flex; flex-direction: column; gap: 0.4rem; list-style-position: inside;">
+            <li><strong>Infinite Scalability:</strong> Zero inventory stockouts for digital goods.</li>
+            <li><strong>Instant Gratification:</strong> Exam notes downloaded in under 0.8 seconds.</li>
+            <li><strong>Price Democracy:</strong> Disintermediation saves students 20–50% on textbooks.</li>
+            <li><strong>Eco-Friendly:</strong> Zero paper waste or courier carbon emissions.</li>
+          </ul>
+        </div>
+
+        <div style="background: rgba(255,255,255,0.02); padding: 1.5rem; border-radius: var(--radius-lg); border: 1px solid var(--border-subtle);">
+          <h3 style="font-size: 1.15rem; color: #f87171; margin-bottom: 0.75rem;">11.2 Operational Limitations</h3>
+          <ul style="font-size: 0.88rem; color: var(--text-secondary); display: flex; flex-direction: column; gap: 0.4rem; list-style-position: inside;">
+            <li><strong>Digital Fatigue:</strong> Prolonged screen reading can cause eye strain.</li>
+            <li><strong>Piracy Vulnerability:</strong> Unprotected PDFs can be shared on messaging apps.</li>
+            <li><strong>Bandwidth Constraints:</strong> Rural students may face download delays.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="margin-top: 1.5rem; background: rgba(99, 102, 241, 0.05); padding: 1.5rem; border-radius: var(--radius-lg); border: 1px solid rgba(99, 102, 241, 0.2);">
+        <h3 style="font-size: 1.15rem; color: #818cf8; margin-bottom: 0.75rem;">11.3 Security Architecture</h3>
+        <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.7;">
+          BookNest prevents digital piracy through <strong>cryptographic metadata watermarking</strong>: embedding the student's name, email, and transaction license key into downloaded manifests. Financial data is safeguarded through client-side tokenization (PCI-DSS SAQ-A compliance), while personal records adhere to the <strong>Digital Personal Data Protection (DPDP) Act, 2023</strong>.
         </p>
-        <p style="font-size: 0.95rem; color: var(--text-secondary);">
-          Furthermore, digital goods exhibit <strong>non-rivalrous consumption</strong>: simultaneous access by hundreds of thousands of users does not diminish the product's availability or quality.
-        </p>
-      </div>
-
-      <div class="screenshot-figure">
-        <img src="screenshots/04_customer_reviews.png" alt="Verified Customer Reviews">
-        <div class="screenshot-caption">Figure 3.1: Peer validation and verified buyer review system with live review submission form.</div>
       </div>
     </section>
 
-    <!-- Section 4 -->
-    <section class="report-card" id="guideline4">
-      <span class="report-badge">Guideline 4</span>
-      <h2 style="font-size: 1.7rem; margin-bottom: 1.25rem;">4. E-Commerce Business Models</h2>
-      <p>
-        NovaCraft Digital adopts a <strong>Hybrid B2C & Creator Marketplace Model</strong>:
+    <!-- =======================================================================
+         12. Conclusion
+         ======================================================================= -->
+    <section class="report-card" id="conclusion">
+      <span class="report-badge">Section 12</span>
+      <h2 style="font-size: 1.6rem; margin-bottom: 1.25rem; color: #fff;">12. Conclusion</h2>
+      <p style="font-size: 1rem; line-height: 1.8; color: #cbd5e1;">
+        The BookNest Online Bookstore project successfully synthesizes all academic requirements outlined in the <strong>Section B</strong> assignment brief for <strong>Paper SEC301 (Management Information System)</strong> under the instruction of <strong>Dr. Sudipta Halder</strong>.
       </p>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
-        <div style="border-left: 3px solid var(--accent-primary); padding-left: 1rem;">
-          <h4 style="color: #fff; margin-bottom: 0.35rem;">B2C Catalog (Direct Sales)</h4>
-          <p style="font-size: 0.88rem; color: var(--text-secondary);">
-            First-party proprietary digital goods developed in-house yield 100% gross profit margins, establishing quality benchmarks for the platform.
-          </p>
-        </div>
-        <div style="border-left: 3px solid #10b981; padding-left: 1rem;">
-          <h4 style="color: #fff; margin-bottom: 0.35rem;">C2C Creator Marketplace</h4>
-          <p style="font-size: 0.88rem; color: var(--text-secondary);">
-            Verified independent instructors and software authors list assets, earning an 85% payout while the platform takes a 15% transaction fee.
-          </p>
-        </div>
-        <div style="border-left: 3px solid var(--accent-secondary); padding-left: 1rem;">
-          <h4 style="color: #fff; margin-bottom: 0.35rem;">Network Effect Multiplier</h4>
-          <p style="font-size: 0.88rem; color: var(--text-secondary);">
-            Creators bring their own audiences to the platform, driving down Customer Acquisition Cost (CAC) while expanding overall catalog variety.
-          </p>
-        </div>
-      </div>
+      <p style="font-size: 1rem; line-height: 1.8; color: #cbd5e1; margin-top: 1rem;">
+        By providing an intuitive digital catalog of academic textbooks, bestselling novels, and semester revision notes, accompanied by interactive sample chapter previews, real-time cart calculations, and instant digital fulfillment, the platform demonstrates how modern information architectures revolutionize commerce, eliminate supply chain friction, and empower students with accessible learning.
+      </p>
     </section>
 
-    <!-- Section 5 -->
-    <section class="report-card" id="guideline5">
-      <span class="report-badge">Guideline 5</span>
-      <h2 style="font-size: 1.7rem; margin-bottom: 1.25rem;">5. Technology Stack, Security & Future Scope</h2>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 1rem;">
-        <div>
-          <h4 style="color: #10b981; margin-bottom: 0.5rem;">Strategic Benefits</h4>
-          <ul style="font-size: 0.88rem; color: var(--text-secondary); list-style-position: inside;">
-            <li>Zero warehousing, stockouts, or freight logistics.</li>
-            <li>Instantaneous electronic delivery under 800ms.</li>
-            <li>Infinite scalability with 85%+ gross profit margins.</li>
-          </ul>
-        </div>
-        <div>
-          <h4 style="color: #f59e0b; margin-bottom: 0.5rem;">Security & Challenges</h4>
-          <ul style="font-size: 0.88rem; color: var(--text-secondary); list-style-position: inside;">
-            <li>DRM Piracy: Mitigated by signed license keys.</li>
-            <li>Payment Fraud: Tokenized gateway compliance.</li>
-            <li>Refund Complexity on downloaded intellectual property.</li>
-          </ul>
-        </div>
-        <div>
-          <h4 style="color: var(--accent-secondary); margin-bottom: 0.5rem;">Future Scope</h4>
-          <ul style="font-size: 0.88rem; color: var(--text-secondary); list-style-position: inside;">
-            <li>AI-driven personalized codebase generation.</li>
-            <li>Web3 smart contracts for secondary license royalties.</li>
-            <li>WebAssembly browser code execution sandboxes.</li>
-          </ul>
-        </div>
-      </div>
+    <!-- =======================================================================
+         13. References
+         ======================================================================= -->
+    <section class="report-card" id="references">
+      <span class="report-badge">Section 13</span>
+      <h2 style="font-size: 1.6rem; margin-bottom: 1.25rem; color: #fff;">13. References</h2>
+      <ol style="padding-left: 1.5rem; display: flex; flex-direction: column; gap: 0.85rem; color: var(--text-secondary); font-size: 0.9rem;">
+        <li>
+          <strong>Laudon, K. C., & Laudon, J. P. (2022).</strong> <em>Management Information Systems: Managing the Digital Firm</em> (17th Global Edition). Pearson Education. (Prescribed textbook for Paper SEC301).
+        </li>
+        <li>
+          <strong>Kotler, P., & Armstrong, G. (2020).</strong> <em>Principles of Marketing</em> (18th Global Edition). Pearson Education.
+        </li>
+        <li>
+          <strong>Chaffey, D. (2019).</strong> <em>Digital Business and E-Commerce Management: Strategy, Implementation and Practice</em> (7th Edition). Pearson.
+        </li>
+        <li>
+          <strong>Varian, H. R. (2000).</strong> <em>Buying, Sharing and Renting Information Goods</em>. The Journal of Industrial Economics, 48(4), 473-488.
+        </li>
+        <li>
+          <strong>Shapiro, C., & Varian, H. R. (1998).</strong> <em>Information Rules: A Strategic Guide to the Network Economy</em>. Harvard Business School Press.
+        </li>
+        <li>
+          <strong>Mozilla Developer Network (MDN).</strong> <em>Web APIs: Blob, URL.createObjectURL, and HTML5 Web Storage</em>. Retrieved from <a href="https://developer.mozilla.org/" target="_blank" style="color: #818cf8;">https://developer.mozilla.org/</a>
+        </li>
+        <li>
+          <strong>World Wide Web Consortium (W3C).</strong> <em>Web Content Accessibility Guidelines (WCAG) 2.1</em>. Retrieved from <a href="https://www.w3.org/WAI/standards-guidelines/wcag/" target="_blank" style="color: #818cf8;">https://www.w3.org/</a>
+        </li>
+        <li>
+          <strong>Government of India.</strong> <em>The Digital Personal Data Protection Act, 2023 (DPDP Act)</em>. Ministry of Electronics and Information Technology.
+        </li>
+      </ol>
     </section>
-
-    <footer style="text-align: center; color: var(--text-muted); font-size: 0.85rem; padding-top: 2rem;">
-      <p>© 2026 NovaCraft Digital Technologies Pvt. Ltd. • All Assignment Requirements Fully Met.</p>
-    </footer>
   </div>
 </body>
 </html>
