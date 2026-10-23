@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="NovaCraft Digital - The Premier E-Commerce Marketplace for Next-Gen Software Boilerplates, UI/UX Design Assets, Developer E-Books, and Video Masterclasses with Instant Global Fulfillment.">
+  <meta name="keywords" content="digital goods, e-commerce, software boilerplates, figma design systems, developer e-books, online masterclasses, digital markets, business models">
+  <meta name="author" content="NovaCraft Digital Technologies Pvt. Ltd. / Sruti">
+  <title>NovaCraft Digital | Next-Gen Digital Goods & Software Marketplace</title>
+
+  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Ambient Atmospheric Glow Elements -->
+  <div class="ambient-glow-1"></div>
+  <div class="ambient-glow-2"></div>
+
+  <!-- Top Announcement Promo Bar -->
+  <div class="announcement-bar">
+    <span>🚀 <strong>Special Academic & Launch Promo:</strong> Use code <span class="badge-code" onclick="navigator.clipboard?.writeText('DIGITAL20')">DIGITAL20</span> for 20% off or <span class="badge-code" onclick="navigator.clipboard?.writeText('SRUTI50')">SRUTI50</span> for 50% assignment discount!</span>
+  </div>
+
+  <!-- Sticky Glassmorphism Header -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <!-- Brand Logo -->
+      <a href="#hero" class="brand-logo" id="brandLogo">
+        <div class="brand-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+            <polyline points="2 17 12 22 22 17"></polyline>
+            <polyline points="2 12 12 17 22 12"></polyline>
+          </svg>
+        </div>
+        <span>NovaCraft <span class="brand-highlight">Digital</span></span>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#hero" class="nav-link active">Home</a></li>
+          <li><a href="#catalog" class="nav-link">Digital Goods</a></li>
+          <li><a href="#company" class="nav-link">Company</a></li>
+          <li><a href="#digital-markets" class="nav-link">Digital Markets</a></li>
+          <li><a href="#business-models" class="nav-link">Business Models</a></li>
+          <li><a href="#technology" class="nav-link">Tech & Architecture</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Action Controls -->
+      <div class="header-actions">
+        <!-- Live Instant Search -->
+        <div class="header-search-wrapper">
+          <span class="search-icon-fixed">🔍</span>
+          <input type="text" id="headerSearchInput" class="header-search-input" placeholder="Search digital goods (press '/' to focus)..." aria-label="Search catalog">
+        </div>
+
+        <!-- Currency Switcher -->
+        <select id="currencySelect" class="select-filter" style="padding: 0.4rem 0.6rem; font-size: 0.8rem;" aria-label="Select currency">
+          <option value="USD">USD ($)</option>
+          <option value="EUR">EUR (€)</option>
+          <option value="INR">INR (₹)</option>
+          <option value="GBP">GBP (£)</option>
+        </select>
+
+        <!-- User Authentication Button -->
+        <button id="authTriggerBtn" class="btn-auth-trigger" aria-label="User Account">
+          <span>👤</span>
+          <span>Sign In</span>
+        </button>
+
+        <!-- Cart Button with Counter Badge -->
+        <div class="btn-icon-wrapper">
+          <button id="cartBtn" class="btn-icon" aria-label="View Shopping Cart">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <path d="M16 10a4 4 0 0 1-8 0"></path>
+            </svg>
+          </button>
+          <span id="cartBadge" class="cart-count-badge">2</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- =======================================================================
+         Hero Section
+         ======================================================================= -->
+    <section class="hero-section" id="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="hero-pill">
+            <span class="pulse-dot"></span>
+            <span>⚡ Sub-Second Digital Delivery & Zero Shipping Friction</span>
+          </div>
+
+          <h1 class="hero-title">
+            The World’s Leading Hub for <span class="gradient-text">Digital Goods & Creative Tech</span>
+          </h1>
+
+          <p class="hero-subtitle">
+            NovaCraft Digital connects engineers, designers, and students with high-performance software boilerplates, Figma design systems, engineering e-books, and video masterclasses with automated electronic licensing.
+          </p>
+
+          <!-- Quick Hero Search -->
+          <div style="position: relative; max-width: 520px; margin-bottom: 2rem;">
+            <input type="text" id="heroSearchInput" class="form-input" style="width: 100%; padding: 0.95rem 1.25rem 0.95rem 3rem; border-radius: var(--radius-full); font-size: 0.95rem; background: rgba(255,255,255,0.07);" placeholder="Search 8+ digital assets, SaaS kits, guides...">
+            <span style="position: absolute; left: 1.25rem; top: 50%; transform: translateY(-50%); font-size: 1.1rem; color: var(--text-muted); pointer-events: none;">🔍</span>
+          </div>
+
+          <div class="hero-actions">
+            <a href="#catalog" class="btn-primary">
+              <span>Explore Digital Catalog</span>
+              <span>↓</span>
+            </a>
+            <a href="#digital-markets" class="btn-secondary">
+              <span>How Digital Markets Work</span>
+              <span>→</span>
+            </a>
+          </div>
+
+          <!-- Hero Metrics Trust Bar -->
+          <div class="hero-stats">
+            <div class="stat-item">
+              <h3>15,000+</h3>
+              <p>Instant Downloads</p>
+            </div>
+            <div class="stat-item">
+              <h3>99.8%</h3>
+              <p>Customer Rating</p>
+            </div>
+            <div class="stat-item">
+              <h3>85%</h3>
+              <p>Creator Payout</p>
+            </div>
+            <div class="stat-item">
+              <h3>0.8s</h3>
+              <p>Delivery Latency</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Showcase Card -->
+        <div class="hero-visual-card">
+          <div class="hero-card-header">
+            <span class="hero-card-tag">🔥 Featured Flagship Asset</span>
+            <span style="font-size: 0.8rem; color: #10b981; font-weight: 700;">Verified Digital Good</span>
+          </div>
+
+          <div class="hero-preview-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=700&auto=format&fit=crop&q=80" alt="ApexSaaS Boilerplate Preview" class="hero-preview-img">
+          </div>
+
+          <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">ApexSaaS - Next.js 15 Boilerplate</h3>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 1rem;">Complete production-ready multi-tenant codebase with Stripe billing & NextAuth v5.</p>
+
+          <div class="hero-mock-specs">
+            <div class="spec-line">
+              <span>Format:</span>
+              <span>ZIP / GitHub Repository</span>
+            </div>
+            <div class="spec-line">
+              <span>Marginal Delivery Cost:</span>
+              <span style="color: #10b981;">$0.00 (Zero Marginal Cost)</span>
+            </div>
+            <div class="spec-line">
+              <span>License:</span>
+              <span>Extended Commercial License</span>
+            </div>
+          </div>
+
+          <div style="display: flex; align-items: center; justify-content: space-between; padding-top: 1rem; border-top: 1px solid var(--border-subtle);">
+            <div>
+              <span style="font-size: 1.4rem; font-weight: 800; color: var(--text-primary);">$49.00</span>
+              <span style="font-size: 0.85rem; color: var(--text-muted); text-decoration: line-through; margin-left: 0.4rem;">$89.00</span>
+            </div>
+            <button class="btn-primary" style="padding: 0.6rem 1.2rem; font-size: 0.85rem;" onclick="document.querySelector('[data-action=\'add-cart\'][data-id=\'nc-soft-01\']')?.click() || alert('Added to cart!');">
+              ⚡ Instant Access
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         Product Catalog & Search Section (Guideline 2)
+         ======================================================================= -->
+    <section class="section-wrapper bg-darker" id="catalog">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Curated Digital Catalog</span>
+          <h2 class="section-title">Explore Premium Intangible Digital Products</h2>
+          <p class="section-description">
+            Filter through software boilerplates, UI kits, technical e-books, and masterclasses. All products come with instant electronic delivery and cryptographically signed license keys.
+          </p>
+        </div>
+
+        <!-- Toolbar & Filter Controls -->
+        <div class="catalog-toolbar">
+          <div class="category-tabs" id="categoryTabs">
+            <button class="category-btn active" data-category="all">All Products (8)</button>
+            <button class="category-btn" data-category="software">Software & Boilerplates (2)</button>
+            <button class="category-btn" data-category="design">UI/UX & Design Assets (2)</button>
+            <button class="category-btn" data-category="ebooks">E-Books & Guides (2)</button>
+            <button class="category-btn" data-category="courses">Video Masterclasses (2)</button>
+            <button class="category-btn" data-category="media">3D & Audio (1)</button>
+          </div>
+
+          <div class="toolbar-controls">
+            <label for="sortSelect" style="font-size: 0.85rem; color: var(--text-muted);">Sort by:</label>
+            <select id="sortSelect" class="select-filter">
+              <option value="featured">Featured Picks</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+              <option value="rating">Highest Rated ★</option>
+              <option value="popular">Most Downloaded</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Products Grid Container -->
+        <div class="products-grid" id="productsGrid">
+          <!-- Dynamically populated by app.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         Guideline 1: Introduction to the Company
+         ======================================================================= -->
+    <section class="section-wrapper" id="company">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Guideline 1 • Corporate Profile</span>
+          <h2 class="section-title">Introduction to NovaCraft Digital</h2>
+          <p class="section-description">
+            A comprehensive overview of our organization, business mission, product portfolio, and target customer demographic.
+          </p>
+        </div>
+
+        <div class="company-info-card">
+          <div>
+            <div class="company-detail-item">
+              <h4>1. Company Name & Background</h4>
+              <p>
+                <strong>NovaCraft Digital Technologies Pvt. Ltd.</strong> is a next-generation electronic commerce enterprise established in 2024. Headquartered in Bengaluru, Karnataka, India, with distributed edge server nodes worldwide, NovaCraft was founded by a syndicate of senior software architects, product designers, and technical authors seeking to eliminate the friction, latency, and high distributor fees associated with traditional digital asset monetization.
+              </p>
+            </div>
+
+            <div class="company-detail-item">
+              <h4>2. Corporate Objectives & Vision</h4>
+              <p>
+                Our objective is to build a decentralized, transparent, and ultra-low-latency electronic marketplace for intangible digital goods. We empower digital creators with an unprecedented <strong>85% royalty payout</strong> (contrasting traditional app store 30% take-rates), guarantee sub-second digital fulfillment to buyers in 140+ countries, and provide enterprise-grade licensing management.
+              </p>
+            </div>
+
+            <div class="company-detail-item">
+              <h4>3. Nature of Business</h4>
+              <p>
+                NovaCraft operates strictly as a <strong>pure-play digital e-commerce marketplace</strong>. Unlike physical goods retailers who maintain inventory, warehousing, and parcel logistics, NovaCraft distributes <em>intangible digital goods</em> that possess zero marginal reproduction costs, automated electronic verification, and instant cloud-based electronic delivery.
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <div class="company-detail-item">
+              <h4>4. Products & Services Offered</h4>
+              <p style="margin-bottom: 0.5rem;">Our portfolio is organized into four core digital categories:</p>
+              <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem;">
+                <li><strong style="color: var(--accent-secondary);">• Software & Code Templates:</strong> Production-ready full-stack boilerplates (Next.js, FastAPI, Docker), cloud infrastructure CLI tools, and automation scripts.</li>
+                <li><strong style="color: var(--accent-secondary);">• UI/UX Design Assets:</strong> Comprehensive Figma design systems, 3D isometric illustration libraries, and icon packs with multi-brand design tokens.</li>
+                <li><strong style="color: var(--accent-secondary);">• Technical E-Books & Guides:</strong> DRM-free PDF, EPUB, and interactive Notion handbooks covering distributed systems architecture, DevOps, and micro-SaaS bootstrapping.</li>
+                <li><strong style="color: var(--accent-secondary);">• Masterclasses & Digital Media:</strong> 4K on-demand video masterclasses with GitHub repositories and studio-mastered audio sound design libraries.</li>
+              </ul>
+            </div>
+
+            <div class="company-detail-item">
+              <h4>5. Target Customers & Buyer Personas</h4>
+              <p>
+                Our primary customer base includes <strong>Software Engineers & Tech Leads</strong> needing to accelerate product launches; <strong>Product Designers & Freelance Agencies</strong> looking for enterprise UI libraries; <strong>Indie Hackers & Startup Founders</strong> launching micro-SaaS businesses; and <strong>University Students & Aspiring Creators</strong> acquiring real-world industry skills.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         Guideline 3: Digital Markets and Digital Goods
+         ======================================================================= -->
+    <section class="section-wrapper bg-darker" id="digital-markets">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Guideline 3 • Digital Market Dynamics</span>
+          <h2 class="section-title">Digital Markets & The Economics of Digital Goods</h2>
+          <p class="section-description">
+            How digital markets transform buyer-seller interactions, economic marginal costs, online promotional mechanics, dynamic pricing, and verified customer feedback systems.
+          </p>
+        </div>
+
+        <div class="digital-features-grid">
+          <!-- Buyer-Seller Interaction Box -->
+          <div class="feature-box">
+            <div class="feature-box-icon">🤝</div>
+            <h3>1. Buyer & Seller Online Interaction</h3>
+            <p>
+              In traditional physical retail, transactions require physical presence, inventory holding, shipping intermediaries, and delayed settlement. In our digital marketplace, interaction occurs through automated algorithmic matchmaking:
+            </p>
+            <ul class="feature-highlight-list">
+              <li><i>✓</i> <strong>Search & Algorithmic Discovery:</strong> Semantic keyword indexing and categorized tags connect buyers directly to creators.</li>
+              <li><i>✓</i> <strong>Automated Escrow & Licensing:</strong> Payments are captured electronically, escrowed securely, and split automatically between platform and creator.</li>
+              <li><i>✓</i> <strong>Instant Zero-Contact Fulfillment:</strong> The electronic delivery daemon issues digital download keys within 800ms of transaction authorization.</li>
+            </ul>
+          </div>
+
+          <!-- Economics of Digital Goods Box -->
+          <div class="feature-box">
+            <div class="feature-box-icon">⚡</div>
+            <h3>2. Characteristics of Digital Goods</h3>
+            <p>
+              Digital goods exhibit unique economic properties fundamentally different from physical merchandise:
+            </p>
+            <ul class="feature-highlight-list">
+              <li><i>✓</i> <strong>Zero Marginal Cost of Reproduction:</strong> Producing the 10,000th copy of our Distributed Systems Handbook costs exactly $0.00.</li>
+              <li><i>✓</i> <strong>Non-Rivalrous Consumption:</strong> Thousands of users can download and study the same video masterclass simultaneously without degrading quality.</li>
+              <li><i>✓</i> <strong>Indivisibility & Perishability-Immunity:</strong> Digital software does not spoil or wear down, though it requires continuous version maintenance.</li>
+            </ul>
+          </div>
+
+          <!-- Promotion, Pricing & Reviews Box -->
+          <div class="feature-box">
+            <div class="feature-box-icon">📈</div>
+            <h3>3. Online Promotion & Dynamic Pricing</h3>
+            <p>
+              Marketing and monetizing intangible assets relies on automated, high-velocity digital mechanisms:
+            </p>
+            <ul class="feature-highlight-list">
+              <li><i>✓</i> <strong>Dynamic Bundle Pricing:</strong> Tiered discounts and automated coupons (e.g. <code>DIGITAL20</code>) increase average order value (AOV).</li>
+              <li><i>✓</i> <strong>Affiliate & Creator Network:</strong> Content creators earn 20% affiliate commissions for referring buyers through unique tracking parameters.</li>
+              <li><i>✓</i> <strong>Verified Peer Reviews:</strong> Only authenticated buyers who completed checkout can submit ratings, preventing review manipulation.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Comparative Analysis Table: Physical Goods vs. Digital Goods -->
+        <h3 style="font-size: 1.4rem; margin-bottom: 1.25rem; text-align: center;">Comparative Analysis: Physical Markets vs. Digital Goods Marketplace</h3>
+        <div class="table-responsive">
+          <table class="custom-table">
+            <thead>
+              <tr>
+                <th>Economic Dimension</th>
+                <th>Traditional Physical E-Commerce</th>
+                <th>NovaCraft Digital Goods Platform</th>
+                <th>Strategic Market Advantage</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Marginal Cost of Production</strong></td>
+                <td>High (Raw materials, fabrication, packaging)</td>
+                <td><span class="pill-highlight">Near $0.00 per unit</span></td>
+                <td>Infinite scalability with near 100% gross profit margins</td>
+              </tr>
+              <tr>
+                <td><strong>Delivery & Fulfillment</strong></td>
+                <td>2 to 7 days via postal / courier freight</td>
+                <td><span class="pill-highlight">Sub-second (&lt; 0.8s) instant electronic download</span></td>
+                <td>Immediate customer gratification; zero shipping fees</td>
+              </tr>
+              <tr>
+                <td><strong>Inventory & Storage Risk</strong></td>
+                <td>Warehouses, stockouts, shrinkage, depreciation</td>
+                <td><span class="pill-highlight">Zero physical warehouse overhead; Cloud CDN storage</span></td>
+                <td>Immune to supply-chain bottlenecks and spoilage</td>
+              </tr>
+              <tr>
+                <td><strong>Geographic Reach</strong></td>
+                <td>Restricted by customs, shipping tariffs, and borders</td>
+                <td><span class="pill-highlight">Instant global reach across 140+ countries</span></td>
+                <td>Frictionless cross-border digital trade</td>
+              </tr>
+              <tr>
+                <td><strong>Copyright & Protection</strong></td>
+                <td>Counterfeits, gray market physical imports</td>
+                <td>Digital DRM, cryptographically signed license keys</td>
+                <td>Automated license verification and repo revoking</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         Guideline 4: E-Commerce Business Models
+         ======================================================================= -->
+    <section class="section-wrapper" id="business-models">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Guideline 4 • Business Architecture</span>
+          <h2 class="section-title">E-Commerce Business Models & Strategic Alignment</h2>
+          <p class="section-description">
+            Analysis of major electronic commerce business models and the detailed rationale behind NovaCraft Digital’s hybrid model.
+          </p>
+        </div>
+
+        <div class="business-models-grid">
+          <!-- B2C Card -->
+          <div class="model-card featured">
+            <span class="model-badge-top">Primary Adopted Model</span>
+            <h3 class="model-name">1. B2C Model</h3>
+            <div class="model-tagline">Business-to-Consumer / Creator-to-Consumer</div>
+            <p>
+              <strong>Description:</strong> NovaCraft curates proprietary and certified digital software, e-books, and courses directly to individual developers, students, and professionals for personal and commercial usage.
+            </p>
+            <p>
+              <strong>Why We Follow This Model:</strong> Digital goods offer immediate value to individual consumers with zero distribution latency. Direct-to-consumer digital transactions feature minimal friction, universal card/UPI/crypto settlement, and high conversion rates.
+            </p>
+            <div style="background: rgba(99, 102, 241, 0.1); padding: 0.65rem; border-radius: var(--radius-sm); font-size: 0.8rem; border-left: 3px solid var(--accent-primary);">
+              <strong>Revenue Mechanism:</strong> 100% margin on 1st-party products + 15% marketplace platform commission on creator listings.
+            </div>
+          </div>
+
+          <!-- B2B Card -->
+          <div class="model-card">
+            <h3 class="model-name">2. B2B Model</h3>
+            <div class="model-tagline">Business-to-Business (Enterprise Licensing)</div>
+            <p>
+              <strong>Description:</strong> Enterprises, software agencies, and educational institutions purchase multi-seat commercial licenses for their engineering teams.
+            </p>
+            <p>
+              <strong>Why Relevant:</strong> Enterprise tier tiers (Extended Commercial Licenses) allow corporate design departments to utilize NeoGlass UI kit across unlimited client projects, yielding 5x to 10x higher average transaction values.
+            </p>
+            <div style="background: rgba(255, 255, 255, 0.03); padding: 0.65rem; border-radius: var(--radius-sm); font-size: 0.8rem; border-left: 3px solid var(--text-muted);">
+              <strong>Revenue Mechanism:</strong> Multi-seat team licensing, corporate invoices, and SLA consulting contracts.
+            </div>
+          </div>
+
+          <!-- C2C / Marketplace Card -->
+          <div class="model-card featured">
+            <span class="model-badge-top">Integrated Marketplace</span>
+            <h3 class="model-name">3. C2C / Creator Model</h3>
+            <div class="model-tagline">Peer-to-Peer Creator Marketplace</div>
+            <p>
+              <strong>Description:</strong> Independent software authors and technical educators list their digital creations on NovaCraft’s infrastructure, reaching our global audience.
+            </p>
+            <p>
+              <strong>Why We Follow This Model:</strong> Creates powerful network effects. As more creators list assets, more buyers visit; more buyers attract higher-caliber creators. NovaCraft acts as the trusted escrow and delivery custodian.
+            </p>
+            <div style="background: rgba(16, 185, 129, 0.1); padding: 0.65rem; border-radius: var(--radius-sm); font-size: 0.8rem; border-left: 3px solid var(--success);">
+              <strong>Platform Take-Rate:</strong> 15% platform take-rate; 85% creator payout via automated Stripe Connect.
+            </div>
+          </div>
+
+          <!-- C2B Card -->
+          <div class="model-card">
+            <h3 class="model-name">4. C2B Model</h3>
+            <div class="model-tagline">Consumer-to-Business (Reverse Marketplace)</div>
+            <p>
+              <strong>Description:</strong> Individual developers and creators provide code bug bounties, custom template requests, and asset reviews back to businesses and platforms.
+            </p>
+            <p>
+              <strong>Future Role:</strong> In Phase 2, businesses can post "Bounties for Custom Digital Tools" where individual creators bid to produce specialized boilerplates.
+            </p>
+            <div style="background: rgba(255, 255, 255, 0.03); padding: 0.65rem; border-radius: var(--radius-sm); font-size: 0.8rem; border-left: 3px solid var(--text-muted);">
+              <strong>Revenue Mechanism:</strong> Escrow milestone release fees and bounty listing commissions.
+            </div>
+          </div>
+        </div>
+
+        <!-- Detailed Synthesis Callout -->
+        <div style="background: var(--bg-card); border: 1px solid var(--border-hover); border-radius: var(--radius-xl); padding: 2rem; position: relative;">
+          <h4 style="font-size: 1.15rem; margin-bottom: 0.75rem; color: var(--accent-secondary);">
+            📌 Synthesis: Why NovaCraft Follows a "Hybrid B2C & Creator Marketplace" Model
+          </h4>
+          <p style="font-size: 0.95rem; line-height: 1.65; color: var(--text-secondary); margin-bottom: 1rem;">
+            A purely first-party B2C model suffers from catalog bottlenecks (limited to what an internal team can author), while an uncurated C2C model suffers from quality degradation and piracy risks. By combining <strong>B2C rigorous curation</strong> with a <strong>C2C creator revenue-share engine</strong>, NovaCraft achieves:
+          </p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem;">
+            <div style="background: rgba(255,255,255,0.03); padding: 1rem; border-radius: var(--radius-md);">
+              <strong style="color: #fff; display: block; margin-bottom: 0.35rem;">1. Zero Physical Supply Bottlenecks</strong>
+              <span style="font-size: 0.85rem; color: var(--text-muted);">Digital goods scale infinitely with zero marginal storage cost, allowing 85% payout to creators while maintaining healthy platform profitability.</span>
+            </div>
+            <div style="background: rgba(255,255,255,0.03); padding: 1rem; border-radius: var(--radius-md);">
+              <strong style="color: #fff; display: block; margin-bottom: 0.35rem;">2. Bilateral Network Effects</strong>
+              <span style="font-size: 0.85rem; color: var(--text-muted);">Every new high-tier UI kit or course attracts new buyers, creating a flywheel effect that compounds organic search rankings and reduces customer acquisition cost (CAC).</span>
+            </div>
+            <div style="background: rgba(255,255,255,0.03); padding: 1rem; border-radius: var(--radius-md);">
+              <strong style="color: #fff; display: block; margin-bottom: 0.35rem;">3. Diversified Monetization</strong>
+              <span style="font-size: 0.85rem; color: var(--text-muted);">Platform revenue combines high-margin first-party sales, creator listing fees, enterprise licensing, and promotional spotlight slots.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         Guideline 5: Technology Stack & Technical Report
+         ======================================================================= -->
+    <section class="section-wrapper bg-darker" id="technology">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Guideline 5 • Technical Documentation</span>
+          <h2 class="section-title">Technology Stack & Architectural Report</h2>
+          <p class="section-description">
+            Analysis of tools used, software engineering methodologies, security considerations, limitations, and future roadmap.
+          </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; margin-bottom: 3.5rem;">
+          <!-- Tools Used Card -->
+          <div class="feature-box">
+            <div class="feature-box-icon">🛠</div>
+            <h3>1. Core Technology Stack</h3>
+            <ul class="feature-highlight-list">
+              <li><i>•</i> <strong>HTML5 Semantic Architecture:</strong> Structured semantic landmarks (<code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;nav&gt;</code>) ensuring full accessibility, SEO crawlability, and schema metadata.</li>
+              <li><i>•</i> <strong>CSS3 Modern Design System:</strong> Custom CSS variables, backdrop-filter glassmorphism, responsive grid & flexbox layouts, micro-animations, and GPU-accelerated transforms without external bloat.</li>
+              <li><i>•</i> <strong>Vanilla ES6+ JavaScript:</strong> Pure, framework-free reactive state machine managing cart persistence, currency conversions, dynamic modal states, multi-step checkout transitions, and real-time search.</li>
+              <li><i>•</i> <strong>Node.js Development Runtime:</strong> Lightweight local HTTP development server for continuous automated headless browser verification and snapshot capture.</li>
+            </ul>
+          </div>
+
+          <!-- Development Process Card -->
+          <div class="feature-box">
+            <div class="feature-box-icon">⚙️</div>
+            <h3>2. Development Process</h3>
+            <ul class="feature-highlight-list">
+              <li><i>1.</i> <strong>Phase 1 - Requirements Analysis:</strong> Deconstructed e-commerce guidelines across company profile, digital goods economics, business models, and payment flows.</li>
+              <li><i>2.</i> <strong>Phase 2 - Design System:</strong> Developed a sleek, high-contrast dark palette with glowing neon accents, fluid typography, and responsive container constraints.</li>
+              <li><i>3.</i> <strong>Phase 3 - Interactive State Architecture:</strong> Engineered reactive cart operations, coupon logic (<code>DIGITAL20</code>), search indexing, and real-time review submissions.</li>
+              <li><i>4.</i> <strong>Phase 4 - Checkout & Digital Delivery:</strong> Constructed an interactive multi-step checkout with realistic 3D virtual card preview, mock payment processing, and instant downloadable manifests.</li>
+            </ul>
+          </div>
+
+          <!-- Security Architecture Card -->
+          <div class="feature-box">
+            <div class="feature-box-icon">🔒</div>
+            <h3>3. Security Architecture & Concerns</h3>
+            <ul class="feature-highlight-list">
+              <li><i>•</i> <strong>Digital Rights Management (DRM) & Piracy:</strong> Intangible goods are vulnerable to illicit sharing. NovaCraft mitigates this via cryptographically generated unique license keys (e.g. <code>NC-XXXX-XXXX-XXXX</code>) and private GitHub repo invitations tied to verified customer emails.</li>
+              <li><i>•</i> <strong>Payment Gateway Security:</strong> Compliance with PCI-DSS guidelines by delegating card data handling to encrypted tokenized gateways (Stripe/PayPal), preventing plaintext card numbers from touching application storage.</li>
+              <li><i>•</i> <strong>Data Privacy & GDPR:</strong> Strict compliance with global privacy regulations (GDPR, CCPA, India DPDP Act 2023) ensuring customer data is minimized and encrypted at rest using AES-256.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Benefits, Limitations & Future Scope Matrix -->
+        <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-xl); padding: 2.5rem;">
+          <h3 style="font-size: 1.35rem; margin-bottom: 1.5rem; text-align: center;">Evaluation Matrix: Benefits, Limitations & Future Scope</h3>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.75rem;">
+            <!-- Benefits -->
+            <div style="border-left: 3px solid #10b981; padding-left: 1.25rem;">
+              <h4 style="color: #10b981; margin-bottom: 0.75rem; font-size: 1.1rem;">🌟 Strategic Benefits</h4>
+              <ul style="font-size: 0.88rem; color: var(--text-secondary); list-style: none; display: flex; flex-direction: column; gap: 0.6rem;">
+                <li>• <strong>Near-Zero Overhead:</strong> No physical warehouses, couriers, or inventory loss.</li>
+                <li>• <strong>Instantaneous Gratification:</strong> Sub-second global digital delivery boosts buyer delight and reduces support tickets.</li>
+                <li>• <strong>High Gross Margins:</strong> 85%+ gross profit margins allow reinvestment into product quality and creator acquisition.</li>
+                <li>• <strong>Global Frictionless Reach:</strong> Borderless electronic transactions across 140+ countries.</li>
+              </ul>
+            </div>
+
+            <!-- Limitations -->
+            <div style="border-left: 3px solid #f59e0b; padding-left: 1.25rem;">
+              <h4 style="color: #f59e0b; margin-bottom: 0.75rem; font-size: 1.1rem;">⚠️ Operational Limitations</h4>
+              <ul style="font-size: 0.88rem; color: var(--text-secondary); list-style: none; display: flex; flex-direction: column; gap: 0.6rem;">
+                <li>• <strong>Piracy & Unauthorized Leaks:</strong> Once a file is downloaded, completely restricting secondary distribution is challenging without intrusive DRM.</li>
+                <li>• <strong>No Physical Tangibility:</strong> Some customers prefer physical books or hardware boxes over digital downloads.</li>
+                <li>• <strong>Refund Complexity:</strong> Digital files cannot be "returned" in a traditional sense, requiring strict return policy criteria.</li>
+              </ul>
+            </div>
+
+            <!-- Future Scope -->
+            <div style="border-left: 3px solid var(--accent-secondary); padding-left: 1.25rem;">
+              <h4 style="color: var(--accent-secondary); margin-bottom: 0.75rem; font-size: 1.1rem;">🚀 Future Roadmap</h4>
+              <ul style="font-size: 0.88rem; color: var(--text-secondary); list-style: none; display: flex; flex-direction: column; gap: 0.6rem;">
+                <li>• <strong>AI-Driven Code Customizer:</strong> Personalized SaaS boilerplate generation tailored to user requirements in real-time.</li>
+                <li>• <strong>Web3 Smart Contract Royalties:</strong> Automated on-chain secondary market resale royalties for digital creators.</li>
+                <li>• <strong>Interactive Browser Cloud Sandboxes:</strong> Run and test code templates directly in WebAssembly/Docker sandboxes prior to purchase.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         Contact Information & FAQ Section (Guideline 2)
+         ======================================================================= -->
+    <section class="section-wrapper" id="contact">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Customer Support & Inquiries</span>
+          <h2 class="section-title">Get in Touch with NovaCraft Support</h2>
+          <p class="section-description">
+            Have questions about digital asset licensing, creator onboarding, or order issues? Our digital delivery desk is available 24/7.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Interactive Contact Form -->
+          <div class="contact-card">
+            <h3 style="font-size: 1.35rem; margin-bottom: 0.5rem;">Send Us a Message</h3>
+            <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 1.75rem;">
+              Fill in your details below and an engineer will reply to your registered email address within 2 business hours.
+            </p>
+
+            <form id="contactForm" class="contact-form">
+              <div class="form-group">
+                <label class="form-label">Your Full Name *</label>
+                <input type="text" class="form-input" placeholder="e.g. Sruti Sharma" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Email Address *</label>
+                <input type="email" class="form-input" placeholder="sruti@example.edu" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Subject Category *</label>
+                <select class="form-select">
+                  <option>Order & License Key Issue</option>
+                  <option>Commercial Enterprise Licensing</option>
+                  <option>Creator Marketplace Partnership</option>
+                  <option>Academic / Student Inquiries</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Your Message *</label>
+                <textarea rows="4" class="form-textarea" placeholder="Describe your question or digital order number..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn-primary" style="margin-top: 0.5rem;">
+                Submit Inquiry →
+              </button>
+            </form>
+          </div>
+
+          <!-- FAQ Accordion & Contact Details -->
+          <div class="faq-card">
+            <h3 style="font-size: 1.35rem; margin-bottom: 1.25rem;">Frequently Asked Questions</h3>
+
+            <div class="faq-accordion">
+              <div class="faq-item open">
+                <div class="faq-header">
+                  <span>How quickly are digital goods delivered?</span>
+                  <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-body">
+                  Deliveries are completely automated and instant. As soon as your mock payment is processed, you will see direct download links and unique cryptographic license keys on the confirmation screen, and an automated email manifest is dispatched within 800ms.
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <div class="faq-header">
+                  <span>What is your refund policy on digital downloads?</span>
+                  <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-body">
+                  Because digital goods cannot be physically retrieved once downloaded, refunds are granted if the file is technically defective or materially different from the product description within 14 days of purchase.
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <div class="faq-header">
+                  <span>Can I use purchased software for commercial client projects?</span>
+                  <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-body">
+                  Yes! All software boilerplates and design systems include a standard Commercial License allowing you to build unlimited client applications or commercial SaaS projects. You may not resell the source template itself.
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <div class="faq-header">
+                  <span>How can creators apply to sell on NovaCraft?</span>
+                  <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-body">
+                  Creators can apply via our Creator Portal. We review portfolio submissions within 48 hours and provide an 85% revenue-share model with automated bi-weekly Stripe Connect payouts.
+                </div>
+              </div>
+            </div>
+
+            <!-- Corporate Contact Details -->
+            <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border-subtle); display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.85rem;">
+              <div style="display: flex; gap: 0.75rem; align-items: center;">
+                <span style="color: var(--accent-secondary); font-size: 1.1rem;">📍</span>
+                <span>NovaCraft Digital Technologies Pvt. Ltd., Tech Corridor 4th Block, Bengaluru, KA, India</span>
+              </div>
+              <div style="display: flex; gap: 0.75rem; align-items: center;">
+                <span style="color: var(--accent-secondary); font-size: 1.1rem;">✉️</span>
+                <span>support@novacraft-digital.example.com | desk@novacraft.dev</span>
+              </div>
+              <div style="display: flex; gap: 0.75rem; align-items: center;">
+                <span style="color: var(--accent-secondary); font-size: 1.1rem;">⏱</span>
+                <span>Global Digital Operations: 24/7/365 Automated CDN Fulfillment</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =======================================================================
+       Site Footer
+       ======================================================================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#hero" class="brand-logo" style="margin-bottom: 0.75rem;">
+            <div class="brand-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                <polyline points="2 17 12 22 22 17"></polyline>
+                <polyline points="2 12 12 17 22 12"></polyline>
+              </svg>
+            </div>
+            <span>NovaCraft <span class="brand-highlight">Digital</span></span>
+          </a>
+          <p>
+            The premier marketplace for intangible digital products, software boilerplates, UI systems, and developer masterclasses with automated electronic delivery.
+          </p>
+          <div style="display: flex; gap: 0.75rem; color: var(--accent-secondary); font-size: 1.1rem;">
+            <span>🌐</span> <span>💻</span> <span>🛡️</span> <span>⚡</span>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Digital Catalog</h4>
+          <ul class="footer-links">
+            <li><a href="#catalog" onclick="document.querySelector('[data-category=\'software\']')?.click()">Software & Boilerplates</a></li>
+            <li><a href="#catalog" onclick="document.querySelector('[data-category=\'design\']')?.click()">UI/UX & Figma Kits</a></li>
+            <li><a href="#catalog" onclick="document.querySelector('[data-category=\'ebooks\']')?.click()">Technical E-Books</a></li>
+            <li><a href="#catalog" onclick="document.querySelector('[data-category=\'courses\']')?.click()">Online Masterclasses</a></li>
+            <li><a href="#catalog" onclick="document.querySelector('[data-category=\'media\']')?.click()">3D & Audio Assets</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Assignment Sections</h4>
+          <ul class="footer-links">
+            <li><a href="#company">1. Company Profile</a></li>
+            <li><a href="#catalog">2. Design & Features</a></li>
+            <li><a href="#digital-markets">3. Digital Goods Economics</a></li>
+            <li><a href="#business-models">4. E-Commerce Models</a></li>
+            <li><a href="#technology">5. Tech & Architecture</a></li>
+            <li><a href="#contact">Contact & Helpdesk</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Digital Newsletter</h4>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 1rem;">
+            Get weekly updates on newly released developer tools and instant 20% coupon codes.
+          </p>
+          <form id="newsletterForm" class="newsletter-form">
+            <input type="email" class="form-input" placeholder="Enter your email" required style="font-size: 0.85rem; padding: 0.55rem 0.85rem;">
+            <button type="submit" class="btn-primary" style="padding: 0.55rem 1rem; font-size: 0.85rem;">Join</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          © 2026 NovaCraft Digital Technologies Pvt. Ltd. • All Rights Reserved. Built for Academic E-Commerce Excellence (Sruti).
+        </div>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="#hero" style="color: var(--text-muted);">Privacy Policy</a>
+          <a href="#hero" style="color: var(--text-muted);">Terms of Service</a>
+          <a href="#hero" style="color: var(--text-muted);">Digital Rights License</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =======================================================================
+       Slide-Out Shopping Cart Drawer (Guideline 2)
+       ======================================================================= -->
+  <div class="cart-backdrop" id="cartBackdrop"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping Cart">
+    <div class="cart-header">
+      <h3>
+        <span>🛍 Your Digital Cart</span>
+      </h3>
+      <button class="cart-close-btn" id="cartCloseBtn" aria-label="Close cart">✕</button>
+    </div>
+
+    <div class="cart-body" id="cartItemsList">
+      <!-- Items dynamically populated by app.js -->
+    </div>
+
+    <div class="cart-footer">
+      <!-- Promo Code Applicator -->
+      <div class="promo-code-box">
+        <input type="text" id="promoInput" class="promo-input" placeholder="Promo code (e.g. DIGITAL20)">
+        <button id="applyPromoBtn" class="btn-apply-promo">Apply</button>
+      </div>
+      <div id="promoAlert" class="promo-alert"></div>
+
+      <!-- Price Calculations -->
+      <div class="cart-summary-line">
+        <span>Subtotal:</span>
+        <span id="cartSubtotal">$0.00</span>
+      </div>
+      <div class="cart-summary-line" style="color: #10b981;">
+        <span>Promo Discount:</span>
+        <span id="cartDiscount">$0.00</span>
+      </div>
+      <div class="cart-summary-line">
+        <span>Electronic Delivery Fee:</span>
+        <span style="color: #10b981; font-weight: 700;">FREE ($0.00)</span>
+      </div>
+      <div class="cart-summary-line total">
+        <span>Order Total:</span>
+        <span id="cartTotal" style="color: var(--accent-secondary);">$0.00</span>
+      </div>
+
+      <button id="proceedToCheckoutBtn" class="btn-primary btn-checkout-trigger">
+        ⚡ Proceed to Secure Checkout
+      </button>
+    </div>
+  </aside>
+
+  <!-- =======================================================================
+       Interactive Multi-Step Checkout Modal (Guideline 2)
+       ======================================================================= -->
+  <div class="modal-backdrop" id="checkoutModal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 style="font-size: 1.25rem; display: flex; align-items: center; gap: 0.5rem;">
+          <span>🔒</span>
+          <span>NovaSecure Multi-Step Digital Checkout</span>
+        </h3>
+        <button class="modal-close-btn" id="checkoutCloseBtn">✕</button>
+      </div>
+
+      <div id="checkoutStepsContainer">
+        <!-- Dynamically managed by app.js: Step 1 -> Step 2 -> Step 3 (Processing) -> Step 4 (Order Confirmation & Download) -->
+      </div>
+    </div>
+  </div>
+
+  <!-- =======================================================================
+       Product Detail / Quick View Modal (Guideline 2 & 3)
+       ======================================================================= -->
+  <div class="modal-backdrop" id="productDetailModal">
+    <div class="modal-box modal-product-detail">
+      <div class="modal-header">
+        <h3 style="font-size: 1.15rem;">Digital Product Details & Reviews</h3>
+        <button class="modal-close-btn" id="productDetailCloseBtn">✕</button>
+      </div>
+
+      <div id="productDetailContent" style="padding: 1.75rem;">
+        <!-- Populated dynamically by app.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- =======================================================================
+       Customer Registration & Login Modal (Guideline 2)
+       ======================================================================= -->
+  <div class="modal-backdrop" id="authModal">
+    <div class="modal-box" style="max-width: 440px;">
+      <div class="modal-header">
+        <h3 style="font-size: 1.2rem;">Customer Account Portal</h3>
+        <button class="modal-close-btn" id="authCloseBtn">✕</button>
+      </div>
+
+      <div class="auth-tabs">
+        <button class="auth-tab-btn active" data-tab="login">Sign In</button>
+        <button class="auth-tab-btn" data-tab="register">Register Account</button>
+      </div>
+
+      <div style="padding: 1.75rem;">
+        <!-- Login Form -->
+        <form id="loginForm" style="display: flex; flex-direction: column; gap: 1rem;">
+          <div class="form-group">
+            <label class="form-label">Email Address *</label>
+            <input type="email" id="loginEmail" class="form-input" required value="sruti.student@university.edu" placeholder="name@example.com">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Password *</label>
+            <input type="password" id="loginPass" class="form-input" required value="Password123!" placeholder="••••••••">
+          </div>
+          <div style="display: flex; justify-content: space-between; font-size: 0.8rem;">
+            <label style="display: flex; align-items: center; gap: 0.35rem; color: var(--text-muted); cursor: pointer;">
+              <input type="checkbox" checked> Remember me
+            </label>
+            <a href="#" style="color: var(--accent-secondary);" onclick="alert('Password reset link sent to demo email!');">Forgot password?</a>
+          </div>
+          <button type="submit" class="btn-primary" style="margin-top: 0.5rem;">
+            Sign In to Account
+          </button>
+        </form>
+
+        <!-- Register Form -->
+        <form id="registerForm" style="display: none; flex-direction: column; gap: 1rem;">
+          <div class="form-group">
+            <label class="form-label">Full Name *</label>
+            <input type="text" id="regName" class="form-input" required placeholder="Sruti Sharma">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Email Address *</label>
+            <input type="email" id="regEmail" class="form-input" required placeholder="sruti@example.edu">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Password *</label>
+            <input type="password" id="regPass" class="form-input" required placeholder="Create secure password">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Account Type</label>
+            <select class="form-select">
+              <option>Individual Developer / Student</option>
+              <option>Digital Creator / Instructor</option>
+              <option>Company / Agency</option>
+            </select>
+          </div>
+          <button type="submit" class="btn-primary" style="margin-top: 0.5rem;">
+            Create NovaCraft Account
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Application Scripts -->
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

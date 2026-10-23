@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NovaCraft Digital | Academic Assignment Documentation Report</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      background-color: #0b0f19;
+      color: #e2e8f0;
+      line-height: 1.7;
+    }
+    .report-container {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 6rem;
+    }
+    .report-card {
+      background: rgba(22, 30, 49, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius-xl);
+      padding: 2.5rem;
+      margin-bottom: 2.5rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+    .report-badge {
+      display: inline-block;
+      background: rgba(99, 102, 241, 0.15);
+      color: #818cf8;
+      border: 1px solid rgba(99, 102, 241, 0.3);
+      padding: 0.25rem 0.75rem;
+      border-radius: var(--radius-full);
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .screenshot-figure {
+      margin: 2rem 0;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: #0f172a;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+    }
+    .screenshot-figure img {
+      width: 100%;
+      display: block;
+    }
+    .screenshot-caption {
+      padding: 0.85rem 1.25rem;
+      font-size: 0.85rem;
+      color: #94a3b8;
+      background: rgba(15, 23, 42, 0.95);
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      font-style: italic;
+    }
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      margin: 1.5rem 0 2rem;
+    }
+    .meta-item strong {
+      display: block;
+      font-size: 0.75rem;
+      color: var(--accent-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.25rem;
+    }
+    .nav-bar-sticky {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.5rem;
+      background: rgba(16, 22, 35, 0.9);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-subtle);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    @media print {
+      .nav-bar-sticky, .no-print { display: none; }
+      body { background: #fff; color: #000; }
+      .report-card { border: 1px solid #ccc; box-shadow: none; background: #fff; color: #000; }
+    }
+  </style>
+</head>
+<body>
+  <div class="nav-bar-sticky">
+    <div style="font-weight: 800; font-size: 1.1rem; display: flex; align-items: center; gap: 0.5rem;">
+      <span style="color: #6366f1;">📄</span>
+      <span>NovaCraft Digital • Assignment Report</span>
+    </div>
+    <div style="display: flex; gap: 0.75rem;">
+      <a href="index.html" class="btn-secondary" style="padding: 0.45rem 1rem; font-size: 0.85rem;">
+        ← Back to Live Store
+      </a>
+      <button onclick="window.print()" class="btn-primary" style="padding: 0.45rem 1rem; font-size: 0.85rem;">
+        🖨 Print / Export PDF
+      </button>
+    </div>
+  </div>
+
+  <div class="report-container">
+    <header style="margin-bottom: 3rem; text-align: center;">
+      <span class="report-badge">Academic Submission Document</span>
+      <h1 style="font-size: clamp(2rem, 3.5vw, 2.8rem); margin-bottom: 1rem; line-height: 1.2;">
+        Design and Build an E-Commerce Website
+      </h1>
+      <p style="font-size: 1.1rem; color: var(--text-secondary); max-width: 720px; margin: 0 auto;">
+        An Academic Investigation into Digital Markets, Intangible Digital Goods, and E-Commerce Business Models via the NovaCraft Digital Platform.
+      </p>
+
+      <div class="meta-grid" style="text-align: left;">
+        <div class="meta-item">
+          <strong>Student / Submitter</strong>
+          <span>Sruti Sharma</span>
+        </div>
+        <div class="meta-item">
+          <strong>Course Focus</strong>
+          <span>E-Commerce & Digital Markets</span>
+        </div>
+        <div class="meta-item">
+          <strong>Platform Name</strong>
+          <span>NovaCraft Digital Technologies</span>
+        </div>
+        <div class="meta-item">
+          <strong>Submission Date</strong>
+          <span>October 2026</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Section 1 -->
+    <section class="report-card" id="guideline1">
+      <span class="report-badge">Guideline 1</span>
+      <h2 style="font-size: 1.7rem; margin-bottom: 1.25rem;">1. Introduction to the Company</h2>
+      <p>
+        <strong>NovaCraft Digital Technologies Pvt. Ltd.</strong> is an electronic commerce enterprise established in 2024 to revolutionize how technical and creative assets are distributed. Headquartered in Bengaluru, Karnataka, India, with edge server infrastructure deployed globally, NovaCraft provides a frictionless digital marketplace for engineers, designers, and students.
+      </p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
+        <div style="background: rgba(255,255,255,0.03); padding: 1.25rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+          <h4 style="color: var(--accent-secondary); margin-bottom: 0.5rem;">Corporate Objectives</h4>
+          <ul style="font-size: 0.88rem; color: var(--text-secondary); display: flex; flex-direction: column; gap: 0.4rem; list-style-position: inside;">
+            <li>Eliminate middleman fee gouging by offering an 85% creator royalty share.</li>
+            <li>Deliver instant sub-second (&lt; 0.8s) cloud distribution to 140+ countries.</li>
+            <li>Automate software licensing and cryptographic key verification.</li>
+          </ul>
+        </div>
+        <div style="background: rgba(255,255,255,0.03); padding: 1.25rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+          <h4 style="color: var(--accent-secondary); margin-bottom: 0.5rem;">Target Demographics</h4>
+          <ul style="font-size: 0.88rem; color: var(--text-secondary); display: flex; flex-direction: column; gap: 0.4rem; list-style-position: inside;">
+            <li>Software Engineers and Tech Leads needing SaaS boilerplates.</li>
+            <li>UI/UX Designers seeking modular Figma design token libraries.</li>
+            <li>Indie Hackers, Solo Founders, and University Engineering Students.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2 -->
+    <section class="report-card" id="guideline2">
+      <span class="report-badge">Guideline 2</span>
+      <h2 style="font-size: 1.7rem; margin-bottom: 1.25rem;">2. Website Design and Interactive Features</h2>
+      <p>
+        The NovaCraft Digital website has been constructed with cutting-edge web design standards:
+      </p>
+      <ul style="margin: 1rem 0 1.5rem 1.5rem; color: var(--text-secondary); display: flex; flex-direction: column; gap: 0.5rem;">
+        <li><strong>Homepage & Brand Navigation:</strong> Clean vector logo, responsive navigation links with scroll spy, live currency switcher (USD, EUR, INR, GBP), and live search input with keyboard shortcut (<code>/</code>).</li>
+        <li><strong>Product Catalog:</strong> Dynamic category filtering across software, UI kits, e-books, and masterclasses with live sorting options.</li>
+        <li><strong>Interactive Quick-View Modal:</strong> Full asset specifications, download size, license tier, customer reviews, and a working review submission form.</li>
+        <li><strong>Shopping Cart Drawer:</strong> Off-canvas slide-out interface with line-item quantity controls, coupon engine (<code>DIGITAL20</code>, <code>SRUTI50</code>), and real-time total recalculation.</li>
+        <li><strong>Multi-Step Checkout:</strong> Delivery information capture, multi-gateway selector (Credit Card, PayPal, UPI QR, Crypto) with interactive 3D virtual card preview, animated mock payment processing, and post-purchase instant download manager.</li>
+      </ul>
+
+      <div class="screenshot-figure">
+        <img src="screenshots/01_homepage_hero.png" alt="Homepage Hero Banner">
+        <div class="screenshot-caption">Figure 2.1: Homepage featuring geometric branding, navigation menu, announcement promo banner, live metrics, and flagship software card.</div>
+      </div>
+
+      <div class="screenshot-figure">
+        <img src="screenshots/02_product_catalog.png" alt="Product Catalog">
+        <div class="screenshot-caption">Figure 2.2: Product catalog grid with category filter chips, format badges, star ratings, and Add-to-Cart triggers.</div>
+      </div>
+
+      <div class="screenshot-figure">
+        <img src="screenshots/03_product_detail_modal.png" alt="Product Quick View Modal">
+        <div class="screenshot-caption">Figure 2.3: Product quick-view modal with high-res preview, delivery latency badge, file format, and feature checklist.</div>
+      </div>
+
+      <div class="screenshot-figure">
+        <img src="screenshots/06_shopping_cart_discount.png" alt="Shopping Cart Drawer">
+        <div class="screenshot-caption">Figure 2.4: Slide-out shopping cart drawer with applied promo code DIGITAL20 (20% discount) and live total recalculation.</div>
+      </div>
+
+      <div class="screenshot-figure">
+        <img src="screenshots/07_checkout_virtual_card.png" alt="Multi-Step Checkout">
+        <div class="screenshot-caption">Figure 2.5: Interactive 3D virtual credit card preview dynamically updating as the user types payment details.</div>
+      </div>
+
+      <div class="screenshot-figure">
+        <img src="screenshots/08_order_confirmation_downloads.png" alt="Order Confirmation">
+        <div class="screenshot-caption">Figure 2.6: Order confirmation screen displaying unique Order ID, cryptographic license keys, copy-to-clipboard, and download buttons.</div>
+      </div>
+    </section>
+
+    <!-- Section 3 -->
+    <section class="report-card" id="guideline3">
+      <span class="report-badge">Guideline 3</span>
+      <h2 style="font-size: 1.7rem; margin-bottom: 1.25rem;">3. Digital Markets and Digital Goods</h2>
+      <p>
+        Digital markets fundamentally transform traditional economic transaction models:
+      </p>
+      <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.5rem; margin: 1.5rem 0;">
+        <h4 style="color: var(--accent-secondary); margin-bottom: 0.5rem;">Economic Differences: Physical vs. Digital Goods</h4>
+        <p style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 1rem;">
+          In physical commerce, marginal cost of production ($MC$) is consistently positive due to raw materials, fabrication, and packaging. In contrast, digital goods possess a <strong>marginal reproduction cost of zero ($MC = $0)</strong>. Once the master copy of an e-book or software repository is created, streaming or downloading the $10,000^{\text{th}}$ copy incurs no additional manufacturing expense.
+        </p>
+        <p style="font-size: 0.95rem; color: var(--text-secondary);">
+          Furthermore, digital goods exhibit <strong>non-rivalrous consumption</strong>: simultaneous access by hundreds of thousands of users does not diminish the product's availability or quality.
+        </p>
+      </div>
+
+      <div class="screenshot-figure">
+        <img src="screenshots/04_customer_reviews.png" alt="Verified Customer Reviews">
+        <div class="screenshot-caption">Figure 3.1: Peer validation and verified buyer review system with live review submission form.</div>
+      </div>
+    </section>
+
+    <!-- Section 4 -->
+    <section class="report-card" id="guideline4">
+      <span class="report-badge">Guideline 4</span>
+      <h2 style="font-size: 1.7rem; margin-bottom: 1.25rem;">4. E-Commerce Business Models</h2>
+      <p>
+        NovaCraft Digital adopts a <strong>Hybrid B2C & Creator Marketplace Model</strong>:
+      </p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
+        <div style="border-left: 3px solid var(--accent-primary); padding-left: 1rem;">
+          <h4 style="color: #fff; margin-bottom: 0.35rem;">B2C Catalog (Direct Sales)</h4>
+          <p style="font-size: 0.88rem; color: var(--text-secondary);">
+            First-party proprietary digital goods developed in-house yield 100% gross profit margins, establishing quality benchmarks for the platform.
+          </p>
+        </div>
+        <div style="border-left: 3px solid #10b981; padding-left: 1rem;">
+          <h4 style="color: #fff; margin-bottom: 0.35rem;">C2C Creator Marketplace</h4>
+          <p style="font-size: 0.88rem; color: var(--text-secondary);">
+            Verified independent instructors and software authors list assets, earning an 85% payout while the platform takes a 15% transaction fee.
+          </p>
+        </div>
+        <div style="border-left: 3px solid var(--accent-secondary); padding-left: 1rem;">
+          <h4 style="color: #fff; margin-bottom: 0.35rem;">Network Effect Multiplier</h4>
+          <p style="font-size: 0.88rem; color: var(--text-secondary);">
+            Creators bring their own audiences to the platform, driving down Customer Acquisition Cost (CAC) while expanding overall catalog variety.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5 -->
+    <section class="report-card" id="guideline5">
+      <span class="report-badge">Guideline 5</span>
+      <h2 style="font-size: 1.7rem; margin-bottom: 1.25rem;">5. Technology Stack, Security & Future Scope</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 1rem;">
+        <div>
+          <h4 style="color: #10b981; margin-bottom: 0.5rem;">Strategic Benefits</h4>
+          <ul style="font-size: 0.88rem; color: var(--text-secondary); list-style-position: inside;">
+            <li>Zero warehousing, stockouts, or freight logistics.</li>
+            <li>Instantaneous electronic delivery under 800ms.</li>
+            <li>Infinite scalability with 85%+ gross profit margins.</li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="color: #f59e0b; margin-bottom: 0.5rem;">Security & Challenges</h4>
+          <ul style="font-size: 0.88rem; color: var(--text-secondary); list-style-position: inside;">
+            <li>DRM Piracy: Mitigated by signed license keys.</li>
+            <li>Payment Fraud: Tokenized gateway compliance.</li>
+            <li>Refund Complexity on downloaded intellectual property.</li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="color: var(--accent-secondary); margin-bottom: 0.5rem;">Future Scope</h4>
+          <ul style="font-size: 0.88rem; color: var(--text-secondary); list-style-position: inside;">
+            <li>AI-driven personalized codebase generation.</li>
+            <li>Web3 smart contracts for secondary license royalties.</li>
+            <li>WebAssembly browser code execution sandboxes.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <footer style="text-align: center; color: var(--text-muted); font-size: 0.85rem; padding-top: 2rem;">
+      <p>© 2026 NovaCraft Digital Technologies Pvt. Ltd. • All Assignment Requirements Fully Met.</p>
+    </footer>
+  </div>
+</body>
+</html>
